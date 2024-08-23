@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/icons8-synthesizer-100.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600&display=swap');
@@ -35,6 +37,7 @@
             display: flex;
             justify-content: center;
             padding: 20px;
+            /* Remove border-bottom here */
         }
 
         .selections a {
@@ -58,7 +61,7 @@
 
         .content img {
             border-radius: 50%;
-            width: 150px; /* Adjust size as needed */
+            width: 150px;
             height: 150px;
             object-fit: cover;
             margin-bottom: 20px;
@@ -95,29 +98,28 @@
         }
     </style>
 </head>
+
 <body>
     <div class="header">
         <h1>Pie de Boer</h1>
     </div>
     <div class="selections">
+        <a href="index.html">Home</a>
         <a href="cv.html">CV</a>
-        <a href="references.html">References</a> 
         <a href="research.html">Research</a>
-    </div>    
+        <a href="projects.html">Projects</a>
+        <a href="references.html">References</a>
+        <!-- <a href="music.html">Music</a> -->
+    </div>
     <div class="content">
         <img src="assets/selfie.jpeg" alt="Pie de Boer">
         <h2>About Me</h2>
         <p>
-            Enthusiastic and creative graduate from Maastricht University with a strong interest in machine learning, signal processing, and generative AI. 
-            I possess excellent interpersonal skills and a solid technical mindset, 
-            thriving in both collaborative settings and individual research projects. 
-            In my spare time, I explore computer topics such as virtual machines, emulators, 
-            and Linux, delve into music production, and engage in strength training.
-
-            
+            Graduate from Maastricht University with a BSc in Data Science and Artificial Intelligence. A creative soul with a technical mindset. Programming and music production are my core interests, along with strength training. Collaborative attitude, and passionate about presenting to large audiences.
         </p>
-        <p>If you're interested in my work, feel free to explore my GitHub or download my thesis, which you can easily find in the Research section of this page.</p>
-
+        <p>
+            If you're interested in my work, have a look around on my page and GitHub :)
+        </p>
         <div class="social-icons">
             <a href="https://github.com/piedeboer96" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/pie-de-boer-6b6663265/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -126,4 +128,5 @@
         </div>
     </div>
 </body>
+
 </html>

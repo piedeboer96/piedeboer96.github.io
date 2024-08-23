@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/icons8-synthesizer-100.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600&display=swap');
+
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-size: 16px;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: #333333;
+            font-weight: 600;
+        }
+
+        .selections {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .selections a {
+            margin: 0 20px;
+            color: #0071e3;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .selections a:hover {
+            color: #005bb5;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .project {
+            display: flex;
+            align-items: flex-start;
+            max-width: 800px;
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 20px;
+        }
+
+        .project img {
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+
+        .project-details {
+            flex: 1;
+        }
+
+        .project-details h2 {
+            color: #333333;
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .project-details p {
+            color: #555555;
+            margin: 0;
+        }
+
+        .project-details ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .project-details ul li {
+            color: #555555;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Projects</h1>
+    </div>
+
+    <div class="selections">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html">Projects</a>
+        <a href="references.html">References</a>
+    </div>
+
+    <div class="content">
+
+        <!-- Project 1 -->
+        <div class="project">
+            <img src="assets/Image_Project_1_1.png" alt="2D and 3D Bin-Packing GUI">
+            <div class="project-details">
+                <h2>Packing Problem in 2D and 3D</h2>
+                <p><strong>2021 - 6 Months</strong></p>
+                <p>Pack 2D or 3D space with shapes/packages in a container.</p>
+                <ul>
+                    <li>Algorithm X, Dancing Links (DLX)</li>
+                    <li>Greedy Algorithm</li>
+                    <li>Genetic Algorithm</li>
+                </ul>
+            </div>
+            <!-- GitHub and Download Buttons -->
+            <div class="project-links">
+                <!-- GitHub Link -->
+                <a href="https://github.com/piedeboer96/3D-BinPacking" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <!-- Download Report Link -->
+                <a href="assets/Report-1-1.pdf" download class="project-link">
+                    <i class="fas fa-download"></i> Report
+                </a>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project">
+            <img src="assets/Image_Project_1_2.png" alt="3D Golf Simulator GUI">
+            <div class="project-details">
+                <h2>3D Golf Simulator</h2>
+                <p><strong>2022 - 6 Months</strong></p>
+                <p>Build physics engine and developed agents using advanced optimization methods that can play golf on 3D terrain.</p>
+                <ul>
+                    <li>Particle Swarm Optimization (PSO)</li>
+                    <li>Genetical Algorithm (GA)</li>
+                    <li>Euler, Runge-Kutta</li>
+                    <li>FloodFill</li>
+                    <li>Simulated Annealing, Hill Climbing</li>
+                    <li>BattleRoyalOptimization</li>
+                    <li>Splines</li>
+                </ul>
+            </div>
+
+            <!-- GitHub and Download Buttons -->
+            <div class="project-links">
+                <!-- GitHub Link -->
+                <a href="https://github.com/piedeboer96/BingBoysGolf" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <!-- Download Report Link -->
+                <a href="assets/Report-1-2.pdf" download class="project-link">
+                    <i class="fas fa-download"></i> Report
+                </a>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project">
+            <img src="assets/Image_Project_2_1.png" alt="Stochastic Chess GUI">
+            <div class="project-details">
+                <h2>Stochastic Chess</h2>
+                <p><strong>2023 - 6 Months</strong></p>
+                <p>Build agents agents to play stochastic chess which incorporated dice to constraint moves in a randomized fashion.</p>
+                <ul>
+                    <li>Genetical Algorithm (GA)</li>
+                    <li>Q-Learning </li>
+                    <li>HillClimbing</li>
+                    <li>Beam Search</li>
+                    <li>ExpectiMinMax</li>
+                </ul>
+            </div>
+
+            <!-- GitHub and Download Buttons -->
+            <div class="project-links">
+                <!-- GitHub Link -->
+                <a href="https://github.com/piedeboer96/DiceChess" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <!-- Download Report Link -->
+                <a href="assets/Report-2-1.pdf" download class="project-link">
+                    <i class="fas fa-download"></i> Report
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project">
+            <img src="assets/Image_Project_2_2.png" alt="Multi-Modal Digital Assistant GUI">
+            <div class="project-details">
+                <h2>Multi-Modal Digital Assistant</h2>
+                <p><strong>2023 - 6 Months</strong></p>
+                <p>Digital Assistant (ChatBot) with Speech, Text, and Vision interaction.</p>
+                <ul>
+                    <li>Mel-frequency Cepstral Coefficients (MFCC)</li>
+                    <li>Gaussian Mixture Models (GMM)</li>
+                    <li>Wav2Vec-2.0</li>
+                    <li>Mozilla DeepSpeech</li>
+                    <li>Haar Cascade Classifiers</li>
+                    <li>Eigenfaces, FaceNet</li>
+                </ul>
+            </div>
+        
+                <!-- GitHub and Download Buttons -->
+            <div class="project-links">
+                <!-- GitHub Link -->
+                <a href="https://github.com/piedeboer96/Digital-Assistant-Audio-Processing" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <!-- Download Report Link -->
+                <a href="assets/Report-2-2.pdf" download class="project-link">
+                    <i class="fas fa-download"></i> Report
+                </a>
+            </div>
+        </div>
+        
+
+    </div>
+</body>
+</html>

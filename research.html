@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/icons8-synthesizer-100.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600&display=swap');
 
@@ -20,78 +22,118 @@
         .header {
             background-color: #f8f8f8;
             border-bottom: 1px solid #e0e0e0;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .header a {
+        .header h1 {
+            margin: 0;
+            color: #333333;
+            font-weight: 600;
+        }
+
+        .selections {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .selections a {
+            margin: 0 20px;
             color: #0071e3;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1em;
         }
 
-        .header a:hover {
+        .selections a:hover {
             color: #005bb5;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
             padding: 20px;
-            background-color: #f8f8f8;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e0e0e0;
         }
 
-        h1 {
+        .content h2 {
             color: #333333;
-            font-size: 2em;
+            font-size: 1.5em;
             font-weight: 600;
             margin-bottom: 20px;
-            text-align: center;
         }
 
-        .pdf-viewer {
-            width: 100%;
-            height: 800px; /* Adjust the height as needed */
-            border: none;
+        .abstract {
+            max-width: 800px;
+            line-height: 1.6;
+            color: #555555;
+            text-align: left;
+            margin-bottom: 30px;
         }
 
-        .download-btn {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            color: #ffffff;
+        .download-button {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .download-button a {
             background-color: #0071e3;
-            text-align: center;
+            color: #ffffff;
             text-decoration: none;
-            font-weight: 600;
+            padding: 10px 20px;
             border-radius: 5px;
-            width: fit-content;
+            font-size: 16px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .download-btn:hover {
+        .download-button a:hover {
             background-color: #005bb5;
         }
 
-        @media (max-width: 768px) {
-            .pdf-viewer {
-                height: 600px;
-            }
+        .download-button i {
+            font-size: 1.2em;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <a href="index.html">Back to Homepage</a>
+        <h1>Research</h1>
     </div>
-    <div class="container">
-        <h1>Bachelor Thesis</h1>
-        <iframe class="pdf-viewer" src="assets/thesis_aug_20.pdf"></iframe>
-        <a class="download-btn" href="assets/thesis_aug_20.pdf" download>Download Thesis</a>
+    
+    <div class="selections">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html">Projects</a>
+        <a href="references.html">References</a>
+    </div>
+
+    <div class="content">
+        <h2>Conditional Diffusion Models for ECG Signal Denoising</h2>
+        
+        <div class="abstract">
+            <p><strong>Abstract—</strong>This study adapts the Super-Resolution via Repeated Refinement (SR3) conditional diffusion model for ECG noise removal. We aimed to develop a single model capable of eliminating electrode motion (EM), muscle artifacts (MA), and composite noise, which are particularly challenging to remove at low signal-to-noise ratios (SNRs) without data-driven methods.</p>
+            
+            <p>We employed Gram Angular Fields for lossless embedding of 1D signals into the image domain. The model’s performance was compared against various filters, including an LMS adaptive filter, FIR low pass filter (LPF), moving average, and a hybrid filter (LPF with LMS), depending on the noise type. Initially, the model was trained on MIT-BIH Arrhythmia Database (ARDB) data with added noise from the MIT-BIH Noise Stress Test Database. We further assessed the model’s performance on the MIT-BIH Atrial Fibrillation Database (AF) to evaluate its generalization ability.</p>
+
+            <p>Our model effectively tackled EM, MA, and composite noise across SNRs ranging from 0 to 15 decibels (dB). It outperformed baseline models in handling single noise types (EM, MA) at low SNRs (0 and 5 dB). While excelling in removing composite noise on ARDB across all SNRs, its effectiveness diminished for single noise types at high SNRs. Retraining our model on atrial fibrillation data significantly improved its ability to denoise these types of signals.</p>
+            
+            <p>Our methodology presents an innovative yet computationally demanding approach to ECG noise removal, excelling in low SNR and multi-noise settings.</p>
+
+            <p><strong>Index Terms—</strong>electrocardiography, deep learning, digital signal processing, artificial intelligence, noise reduction</p>
+        </div>
+
+        <div class="download-button">
+            <a href="assets/Thesis_Pie_de_Boer.pdf" download>
+                <i class="fas fa-file-pdf"></i> Download Report
+            </a>
+        </div>
     </div>
 </body>
 </html>

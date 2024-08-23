@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV</title>
+    <title>Curriculum Vitae - Pie de Boer</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/icons8-synthesizer-100.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600&display=swap');
 
@@ -20,78 +22,274 @@
         .header {
             background-color: #f8f8f8;
             border-bottom: 1px solid #e0e0e0;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .header a {
+        .header h1 {
+            margin: 0;
+            color: #333333;
+            font-weight: 600;
+        }
+
+        .selections {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .selections a {
+            margin: 0 20px;
             color: #0071e3;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1em;
         }
 
-        .header a:hover {
+        .selections a:hover {
             color: #005bb5;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
+        .content {
             padding: 20px;
-            background-color: #f8f8f8;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e0e0e0;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        h1 {
+        .content h2 {
             color: #333333;
-            font-size: 2em;
+            font-size: 1.8em;
             font-weight: 600;
             margin-bottom: 20px;
-            text-align: center;
         }
 
-        .pdf-viewer {
-            width: 100%;
-            height: 800px; /* Adjust the height as needed */
-            border: none;
+        .content p {
+            line-height: 1.6;
+            color: #555555;
         }
 
-        .download-btn {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            color: #ffffff;
+        .skills-section {
+            margin-bottom: 40px;
+        }
+
+        .skills-section h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333333;
+        }
+
+        .skills-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .skills-section li {
+            line-height: 1.8;
+            color: #555555;
+        }
+
+        .contact-info {
+            font-size: 1.1em;
+            color: #333333;
+            margin-bottom: 40px;
+        }
+
+        .download-button {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .download-button a {
             background-color: #0071e3;
-            text-align: center;
+            color: #ffffff;
             text-decoration: none;
-            font-weight: 600;
+            padding: 10px 20px;
             border-radius: 5px;
-            width: fit-content;
+            font-size: 16px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .download-btn:hover {
+        .download-button a:hover {
             background-color: #005bb5;
         }
 
-        @media (max-width: 768px) {
-            .pdf-viewer {
-                height: 600px;
-            }
+        .download-button i {
+            font-size: 1.2em;
         }
+
     </style>
 </head>
 <body>
     <div class="header">
-        <a href="index.html">Back to Homepage</a>
-    </div>
-    <div class="container">
         <h1>Curriculum Vitae</h1>
-        <iframe class="pdf-viewer" src="assets/cv_aug_20.pdf"></iframe>
-        <a class="download-btn" href="assets/cv_aug_20.pdf" download>Download CV</a>
+    </div>
+    <div class="selections">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html">Projects</a>
+        <a href="references.html">References</a>
+    </div>    
+    <div class="content">
+        <div class="contact-info">
+            <p><strong>Pie de Boer</strong></p>
+            <p>Berlin, Germany</p>
+            <p>+31618928452</p>
+        </div>
+
+        <div class="skills-section">
+            <h2>Skills</h2>
+            
+            <h3>Programming Languages</h3>
+            <ul>
+                <li>Python</li>
+                <li>Java</li>
+                <li>MATLAB</li>
+                <li>C++</li>
+                <li>SQL</li>
+                <li>R</li>
+                <li>Clojure</li>
+                <li>Prolog</li>
+                <li>Bash</li>
+                <li>HTML/CSS</li>
+            </ul>
+            
+            <h3>Frameworks & Libraries</h3>
+            <ul>
+                <li>Python: TensorFlow, PyTorch, Scikit-Learn, Jupyter Notebook, MatplotLib, Seaborn, Scipy, Librosa, TQDM, OpenCV, YOLO, </li>
+                <li>Java: Gradle, Maven, Deep4j, JavaSound API, TarsosDSP, LibGDX, RestAPI, Swing, AWT, JavaFX, Spring</li>
+                <li>MATLAB: DSP System Toolbox, Signal Processing, Statistics and Machine Learning Toolbox, Deep Learning Toolbox, YALMIP</li>
+                <li>C++: Arduino, OpenCV</li>
+                <li>SQL: MySQL, SQLAlchemy, JDBC</li>
+                <li>Web Ontology: OWL, Protege </li>
+            </ul>
+            
+            <h3>Tools & Technologies</h3>
+            <ul>
+                <li>Google Cloud (with Headless UNIX)</li>
+                <li>Version Control: Git, GitHub</li>
+                <li>MS Office: PowerPoint, Excel, Word</li>
+                <li>Reporting: LaTex</li>
+                <li>Command Line Tools: Micro, Homebrew</li>
+            </ul>
+            <h3> Operating Systems </h3>
+            <ul>    
+                <li>Linux (Headless/WSL)</li>
+                <li>Mac OS</li>
+                <li>Windows 10</li>
+            </ul>
+        
+            
+        </div>
+
+        <div class="knowledge-section">
+            <h2>Knowledge & Expertise</h2>
+            <ul>
+                <li>Discrete Mathematics: Logic, Graph Theory, Discrete Strcutures</li>
+                <li>Machine Learning (and Deep Learning)</li>
+                <li>Image and Video Processing (Face Recognition, Face Detection, Filters, Motion Recognition)</li>
+                <li>Audio Processing (Filters, FFT, Speaker ID, Speech Recognition)</li>
+                <li>Mathematics: Calculus, Linear Algebra, Mathetmical Modelling</li>
+                <li>(Non) Linear Optimization</li>
+                <li>Quantum Computing</li>
+                <li>Data Structures and Algorithms  </li>
+                <li>Theoretical Computer Science (Complexity, Turing Machines)</li>
+                <li>Software Engineering (Design Patterns, Scrum, Agile)</li>
+                <li>Data Analysis</li>
+                <li>Recommender Systems</li>
+                <li>Statistical Analysis (A/B Testing, ANOVA, ...)</li>
+                <li>Numerical Mathematics (ODEs)</li>
+                <li>Game Engine Programming (Agents AI, Physics)</li>
+                <li>Computer Security</li>
+                <li>Cloud Computing</li>
+                <li>Databases</li>
+                <li>Robotics (PID Control, CPG Control)</li>
+                <li>Semantic Web and Knowledge Representation</li>
+                <li>Object Oriented Programming</li>
+                <li>Human-Computer Interaction (Figma)</li>
+                <li>Physics (Mechanics, Electromagnetism, Quantum)</li>
+                <li>Chemistry (Physical, Organic, Anorganic and Analytical)</li>
+            </ul>
+        </div>
+
+        <!-- Experience Section Added Here -->
+        <div class="experience-section">
+            <h2>Experience</h2>
+
+            <div class="job">
+                <h3>Rabobank | 2023 - 2024</h3>
+                <p><strong>Portfolio Optimization using Quantum Hardware</strong></p>
+                <ul>
+                    <li>Leverage quantum hardware for Portfolio Optimization.</li>
+                    <li>Implemented Non-Linear Programming solution (MLP) using D-Wave API (Python).</li>
+                    <li>Improved run-times and provided optimized solutions for the client.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3>Mathematics Tutor | 2019 - 2023</h4>
+                <ul>
+                    <li>Tutored students in Algebra, Geometry, (Pre) Calculus, and Statistics.</li>
+                    <li>Specialized in preparing final exam students for academic success.</li>
+                </ul>
+                <h3>Music Producer and DJ | 2012 - Present</h4>
+                <ul>
+                    <li>Performed alongside artists like Lukas & Steve, Dam Swindle, and Mendel.</li>
+                    <li>Played at events such as Pride 2023 (Amsterdam), HOTLINE (Maastricht) and Park City Live (Heerlen). </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="education-section">
+            <h2>Education</h2>
+        
+            <div class="degree">
+                <h3>Data Science and Artificial Intelligence</h3>
+                <p>Maastricht University, Maastricht | 2021 - 2024</p>
+                <p><strong>Completed (180 ECTS)</strong></p>
+                <ul>
+                    <li>Thesis: <em>Conditional Diffusion Models for ECG Signal Denoising</em> (8.5/10.0)</li>
+                    <li>Developed a state-of-the-art approach to denoise ECG signals.</li>
+                    <li>Trained models using Google Cloud and PyTorch.</li>
+                    <li>Achieved better performance than traditional signal processing methods found in MATLAB.</li>
+                </ul>
+                <p><strong>GPA:</strong> 8.28/10.0</p>
+            </div>
+        
+            <div class="degree">
+                <h3>Chemistry</h3>
+                <p>Utrecht University, Utrecht | 2016 - 2017</p>
+                <p><strong>Completed first year (60 ECTS)</strong></p>
+            </div>
+        
+            <div class="degree">
+                <h3>VWO - Atheneum</h3>
+                <p>Bonnefantencollege HAVO/VWO, Maastricht | 2009 - 2016</p>
+                <p><strong>Profile:</strong> Nature & Technology and Nature & Health</p>
+            </div>
+        </div>
+
+        <div class="languages-section">
+            <h2>Languages</h2>
+            <ul>
+                <li>Dutch (Native)</li>
+                <li>English (C1)</li>
+                <li>German (B2)</li>
+            </ul>
+        </div>
+
+        <div class="download-button">
+            <a href="assets/CV_Pie_de_Boer.pdf" download>
+                <i class="fas fa-file-pdf"></i> Download CV
+            </a>
+        </div>
+
     </div>
 </body>
+
 </html>
