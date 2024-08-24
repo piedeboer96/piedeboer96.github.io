@@ -121,6 +121,11 @@
             font-size: 1.2em;
         }
 
+        .download-buttons {
+        display: flex;
+        gap: 15px; /* Space between the buttons */
+    }
+
     </style>
 </head>
 <body>
@@ -160,12 +165,12 @@
             
             <h3>Frameworks & Libraries</h3>
             <ul>
-                <li><strong>Python:</strong> TensorFlow, PyTorch, scikit-learn, Jupyter Notebook, MatplotLib, Seaborn, Scipy, Librosa, TQDM, OpenCV, Pandas, Plotly </li>
+                <li><strong>Python:</strong> TensorFlow, PyTorch, scikit-learn, Jupyter Notebook, MatplotLib, Seaborn, Scipy, Librosa, TQDM, OpenCV, Pandas, Plotly, XGBoost, Statsmodels</li>
                 <li><strong>Java:</strong> Gradle, Maven, Deep4j, JavaSound API, TarsosDSP, LibGDX, RestAPI, Swing, AWT, JavaFX, Spring</li>
                 <li><strong>MATLAB:</strong> DSP System Toolbox, Signal Processing, Statistics and Machine Learning Toolbox, Deep Learning Toolbox, YALMIP</li>
                 <li><strong>C++:</strong> Arduino, OpenCV</li>
                 <li><strong>SQL:</strong> MySQL, SQLAlchemy, JDBC</li>
-                <li><strong>Web Ontology:</strong>OWL, Protege </li>
+                <li><strong>Web Ontology:</strong> OWL, Protege </li>
             </ul>
             
             <h3>Tools & Technologies</h3>
@@ -283,11 +288,15 @@
             </ul>
         </div>
 
-        <div class="download-button">
-            <a href="assets/CV_Pie_de_Boer.pdf" download>
-                <i class="fas fa-file-pdf"></i> Download CV
-            </a>
-        </div>
+    <!-- Improved Download Buttons -->
+    <div class="download-buttons">
+        <a href="assets/CV_Pie_de_Boer.pdf" download class="download-button">
+            <i class="fas fa-file-pdf"></i> Download CV (English)
+        </a>
+        <a href="assets/CV_Pie_de_Boer.pdf" download class="download-button">
+            <i class="fas fa-file-pdf"></i> Download CV (German)
+        </a>
+    </div>
 
     </div>
 </body>
