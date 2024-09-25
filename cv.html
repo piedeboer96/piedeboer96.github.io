@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,24 +12,24 @@
         @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600&display=swap');
 
         body {
-            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: "Andale Mono", monospace;
             font-size: 16px;
-            background-color: #ffffff;
-            color: #000000;
+            background-color: #1d1d1f;
+            color: #f5f5f7;
             margin: 0;
             padding: 0;
         }
 
         .header {
-            background-color: #f8f8f8;
+            background-color: #2c2c2e;
             border-bottom: 1px solid #e0e0e0;
-            padding: 20px;
+            padding: 10px;
             text-align: center;
         }
 
         .header h1 {
             margin: 0;
-            color: #333333;
+            color: #ffffff;
             font-weight: 600;
         }
 
@@ -40,68 +41,64 @@
 
         .selections a {
             margin: 0 20px;
-            color: #0071e3;
+            color: #ffffff;
             text-decoration: none;
             font-weight: 600;
         }
 
         .selections a:hover {
-            color: #005bb5;
+            color: #DA3B24;
         }
 
         .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
             padding: 20px;
             max-width: 800px;
             margin: 0 auto;
         }
 
+        .contact-info {
+            text-align: center;
+        }
+
+        .skills-section, .knowledge-section, .experience-section, .education-section, .languages-section {
+            margin-bottom: 40px;
+            text-align: left; /* Align text to the left */
+            width: 100%; /* Full width for sections */
+        }
+
         .content h2 {
-            color: #333333;
+            color: #f5f5f7;
             font-size: 1.8em;
             font-weight: 600;
             margin-bottom: 20px;
+            text-align: left; /* Left-align section titles */
         }
 
-        .content p {
-            line-height: 1.6;
-            color: #555555;
-        }
-
-        .skills-section {
-            margin-bottom: 40px;
-        }
-
-        .skills-section h3 {
+        .skills-section h3, .knowledge-section h3, .experience-section h3, .education-section h3, .languages-section h3 {
             font-size: 1.5em;
             margin-bottom: 10px;
-            color: #333333;
+            color: #f5f5f7;
         }
 
-        .skills-section ul {
+        .skills-section ul, .knowledge-section ul, .experience-section ul, .education-section ul, .languages-section ul {
             list-style-type: none;
             padding: 0;
+            color: #d1d1d3;
         }
 
-        .skills-section li {
-            line-height: 1.8;
-            color: #555555;
-        }
-
-        .contact-info {
-            font-size: 1.1em;
-            color: #333333;
-            margin-bottom: 40px;
-        }
-
-        .download-button {
-            margin-top: 20px;
+        .download-buttons {
             display: flex;
+            gap: 15px; /* Space between the buttons */
             justify-content: center;
-            align-items: center;
+            margin-top: 20px;
         }
 
-        .download-button a {
-            background-color: #0071e3;
+        .download-buttons a {
+            background-color: #0a84ff;
             color: #ffffff;
             text-decoration: none;
             padding: 10px 20px;
@@ -113,42 +110,38 @@
             gap: 10px;
         }
 
-        .download-button a:hover {
-            background-color: #005bb5;
+        .download-buttons a:hover {
+            background-color: #0071e3;
         }
 
-        .download-button i {
+        .download-buttons i {
             font-size: 1.2em;
         }
-
-        .download-buttons {
-        display: flex;
-        gap: 15px; /* Space between the buttons */
-    }
-
     </style>
 </head>
+
 <body>
     <div class="header">
-        <h1>Curriculum Vitae</h1>
+        <p>CV</p>
     </div>
     <div class="selections">
         <a href="index.html">Home</a>
-        <a href="cv.html">CV</a>
-        <a href="research.html">Research</a>
+        <a href="cv.html">CV</a>    
         <a href="projects.html">Projects</a>
         <a href="references.html">References</a>
-    </div>    
+    </div>
+    
     <div class="content">
+        
         <div class="contact-info">
-            <p><strong>Pie de Boer</strong></p>
-            <p>Berlin, Germany</p>
-            <p>+31618928452</p>
+            <!-- <h3>Contact Details</h3> -->
+            <div><strong>Pie de Boer</strong></div>
+            <div>Berlin, Germany</div>
+            <div>+31618928452</div>
         </div>
 
         <div class="skills-section">
-            <h2>Skills</h2>
-            
+            <h2>Skills 👷‍♂️</h2>
             <h3>Programming Languages</h3>
             <ul>
                 <li>Python</li>
@@ -162,69 +155,66 @@
                 <li>Bash</li>
                 <li>HTML/CSS</li>
             </ul>
-            
+
             <h3>Frameworks & Libraries</h3>
             <ul>
-                <li><strong>Python:</strong> TensorFlow, PyTorch, scikit-learn, Jupyter Notebook, MatplotLib, Seaborn, Scipy, Librosa, TQDM, OpenCV, Pandas, Plotly, XGBoost, Statsmodels</li>
+                <li><strong>Python:</strong> TensorFlow, PyTorch, scikit-learn, Jupyter Notebook, Matplotlib, Seaborn, Scipy, Librosa, TQDM, OpenCV, Pandas, Plotly, XGBoost, Statsmodels</li>
                 <li><strong>Java:</strong> Gradle, Maven, Deep4j, JavaSound API, TarsosDSP, LibGDX, RestAPI, Swing, AWT, JavaFX, Spring</li>
                 <li><strong>MATLAB:</strong> DSP System Toolbox, Signal Processing, Statistics and Machine Learning Toolbox, Deep Learning Toolbox, YALMIP</li>
                 <li><strong>C++:</strong> Arduino, OpenCV</li>
                 <li><strong>SQL:</strong> MySQL, SQLAlchemy, JDBC</li>
-                <li><strong>Web Ontology:</strong> OWL, Protege </li>
+                <li><strong>Web Ontology:</strong> OWL, Protege</li>
             </ul>
-            
+
             <h3>Tools & Technologies</h3>
             <ul>
                 <li>Google Cloud (with Headless UNIX)</li>
                 <li>Version Control: Git, GitHub</li>
                 <li>MS Office: PowerPoint, Excel, Word</li>
-                <li>Reporting: LaTex, LibreOffice</li>
+                <li>Reporting: LaTeX, LibreOffice</li>
                 <li>Command Line Tools: Micro, Homebrew</li>
             </ul>
-            <h3> Operating Systems </h3>
-            <ul>    
+
+            <h3>Operating Systems</h3>
+            <ul>
                 <li>Linux (Headless/WSL)</li>
                 <li>Mac OS</li>
                 <li>Windows 10</li>
             </ul>
-        
-            
         </div>
 
         <div class="knowledge-section">
-            <h2>Knowledge & Expertise</h2>
+            <h2>Knowledge & Expertise 📖</h2>
             <ul>
-                <li>Discrete Mathematics: Logic, Graph Theory, Discrete Strcutures</li>
-                <li>Machine Learning (and Deep Learning)</li>
-                <li>Image and Video Processing (Face Recognition, Face Detection, Filters, Motion Recognition)</li>
-                <li>Audio Processing (Filters, FFT, Speaker ID, Speech Recognition)</li>
-                <li>Mathematics: Calculus, Linear Algebra, Mathetmical Modelling</li>
-                <li>(Non) Linear Optimization</li>
-                <li>Quantum Computing</li>
-                <li>Data Structures and Algorithms  </li>
-                <li>Theoretical Computer Science (Complexity, Turing Machines)</li>
-                <li>Software Engineering (Design Patterns, Scrum, Agile)</li>
-                <li>Data Analysis</li>
-                <li>Recommender Systems</li>
-                <li>Statistical Analysis (A/B Testing, ANOVA, ...)</li>
-                <li>Numerical Mathematics (ODEs)</li>
-                <li>Game Engine Programming (Agents AI, Physics)</li>
-                <li>Computer Security</li>
-                <li>Cloud Computing</li>
-                <li>Databases</li>
-                <li>Robotics (PID Control, CPG Control)</li>
-                <li>Semantic Web and Knowledge Representation</li>
-                <li>Object Oriented Programming</li>
-                <li>Human-Computer Interaction (Figma)</li>
-                <li>Physics (Mechanics, Electromagnetism, Quantum)</li>
-                <li>Chemistry (Physical, Organic, Anorganic and Analytical)</li>
+                <li>• Discrete Mathematics: Logic, Graph Theory, Discrete Structures</li>
+                <li>• Machine Learning (and Deep Learning)</li>
+                <li>• Image and Video Processing (Face Recognition, Face Detection, Filters, Motion Recognition)</li>
+                <li>• Audio Processing (Filters, FFT, Speaker ID, Speech Recognition)</li>
+                <li>• Mathematics: Calculus, Linear Algebra, Mathematical Modelling</li>
+                <li>• (Non) Linear Optimization</li>
+                <li>• Quantum Computing</li>
+                <li>• Data Structures and Algorithms</li>
+                <li>• Theoretical Computer Science (Complexity, Turing Machines)</li>
+                <li>• Software Engineering (Design Patterns, Scrum, Agile)</li>
+                <li>• Data Analysis</li>
+                <li>• Recommender Systems</li>
+                <li>• Statistical Analysis (A/B Testing, ANOVA, ...)</li>
+                <li>• Numerical Mathematics (ODEs)</li>
+                <li>• Game Engine Programming (Agents AI, Physics)</li>
+                <li>• Computer Security</li>
+                <li>• Cloud Computing</li>
+                <li>• Databases</li>
+                <li>• Robotics (PID Control, CPG Control)</li>
+                <li>• Semantic Web and Knowledge Representation</li>
+                <li>• Object Oriented Programming</li>
+                <li>• Human-Computer Interaction (Figma)</li>
+                <li>• Physics (Mechanics, Electromagnetism, Quantum)</li>
+                <li>• Chemistry (Physical, Organic, Anorganic and Analytical)</li>
             </ul>
         </div>
 
-        <!-- Experience Section Added Here -->
         <div class="experience-section">
-            <h2>Experience</h2>
-
+            <h2>Experience 👨‍💻</h2>
             <div class="job">
                 <h3>Rabobank | 2023 - 2024</h3>
                 <p><strong>Portfolio Optimization using Quantum Hardware</strong></p>
@@ -236,23 +226,25 @@
             </div>
 
             <div class="job">
-                <h3>Mathematics Tutor | 2019 - 2023</h4>
+                <h3>Mathematics Tutor | 2019 - 2023</h3>
                 <ul>
                     <li>Tutored students in Algebra, Geometry, (Pre) Calculus, and Statistics.</li>
-                    <li>Specialized in preparing final exam students for academic success.</li>
+                    <li>Created personalized learning plans to meet individual needs.</li>
+                    <li>Improved student grades and confidence in mathematics.</li>
                 </ul>
-                <h3>Music Producer and DJ | 2012 - Present</h4>
+            </div>
+
+            <div class="job">
+                <h3>DJ | 2012 - Present</h3>
                 <ul>
                     <li>Performed alongside artists like Lukas & Steve, Dam Swindle, and Mendel.</li>
-                    <li>Played at events such as Pride 2023 (Amsterdam), HOTLINE (Maastricht) and Park City Live (Heerlen). </li>
+                    <li>Played at events such as Pride 2023 (Amsterdam), HOTLINE (Maastricht), and Park City Live (Heerlen).</li>
                 </ul>
             </div>
         </div>
 
-
         <div class="education-section">
-            <h2>Education</h2>
-        
+            <h2>Education 👨‍🎓</h2>
             <div class="degree">
                 <h3>Data Science and Artificial Intelligence</h3>
                 <p>Maastricht University, Maastricht | 2021 - 2024</p>
@@ -265,13 +257,13 @@
                 </ul>
                 <p><strong>GPA:</strong> 8.28/10.0</p>
             </div>
-        
+
             <div class="degree">
                 <h3>Chemistry</h3>
                 <p>Utrecht University, Utrecht | 2016 - 2017</p>
                 <p><strong>Completed first year (60 ECTS)</strong></p>
             </div>
-        
+
             <div class="degree">
                 <h3>VWO - Atheneum</h3>
                 <p>Bonnefantencollege HAVO/VWO, Maastricht | 2009 - 2016</p>
@@ -280,24 +272,22 @@
         </div>
 
         <div class="languages-section">
-            <h2>Languages</h2>
+            <h2>Languages 🇩🇪  </h2>
             <ul>
-                <li>Dutch (Native)</li>
-                <li>English (C1)</li>
                 <li>German (B2)</li>
+                <li>English (C1)</li>
+                <li>Dutch (Native)</li>
             </ul>
         </div>
 
-    <!-- Improved Download Buttons -->
-    <div class="download-buttons">
-        <a href="assets/CV_Pie_de_Boer.pdf" download class="download-button">
-            <i class="fas fa-file-pdf"></i> Download CV (English)
-        </a>
-        <a href="assets/Lebenslauf_Pie_de_Boer.pdf" download class="download-button">
-            <i class="fas fa-file-pdf"></i> Download CV (German)
-        </a>
-    </div>
-
+        <div class="download-buttons">
+            <a href="assets/CV_Pie_de_Boer.pdf" download>
+                <i class="fas fa-file-pdf"></i> Download CV (English)
+            </a>
+            <a href="assets/Lebenslauf_Pie_de_Boer.pdf" download>
+                <i class="fas fa-file-pdf"></i> Download CV (German)
+            </a>
+        </div>
     </div>
 </body>
 

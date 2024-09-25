@@ -4,31 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>References - Pie de Boer</title>
+    <title>Pie de Boer</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/synthesizer-icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600&display=swap');
 
         body {
-            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: "Andale Mono", monospace;
             font-size: 16px;
-            background-color: #ffffff;
-            color: #000000;
+            background-color: #1d1d1f;
+            color: #f5f5f7;
             margin: 0;
             padding: 0;
         }
 
         .header {
-            background-color: #f8f8f8;
+            background-color: #2c2c2e;
             border-bottom: 1px solid #e0e0e0;
-            padding: 20px;
+            padding: 10px;
             text-align: center;
         }
 
         .header h1 {
             margin: 0;
-            color: #333333;
+            color: #ffffff;
             font-weight: 600;
         }
 
@@ -40,13 +41,13 @@
 
         .selections a {
             margin: 0 20px;
-            color: #0071e3;
+            color: #ffffff;
             text-decoration: none;
             font-weight: 600;
         }
 
         .selections a:hover {
-            color: #005bb5;
+            color: #DA3B24;
         }
 
         .content {
@@ -57,8 +58,16 @@
             padding: 20px;
         }
 
-        .content h3 {
-            color: #333333;
+        .content img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .content h2 {
+            color: #f5f5f7;
             font-size: 1.5em;
             font-weight: 600;
             margin-bottom: 20px;
@@ -67,95 +76,60 @@
         .content p {
             max-width: 600px;
             line-height: 1.6;
-            color: #555555;
+            color: #d1d1d3;
         }
 
-        .contact-info {
-            max-width: 600px;
-            margin-top: 20px;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #f8f8f8;
-            text-align: left;
-        }
-
-        .contact-info h3 {
-            color: #333333;
-            font-size: 1.2em;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .contact-info .contact-item {
+        .contact-icons {
+            margin-top: 30px;
             display: flex;
-            align-items: center;
-            margin-bottom: 10px;
+            justify-content: center;
+            gap: 20px;
         }
 
-        .contact-info .contact-item i {
-            font-size: 1.2em;
-            color: #0071e3;
-            margin-right: 10px;
-        }
-
-        .contact-info .contact-item a {
-            color: #0071e3;
+        .contact-icons a {
+            color: #ffffff;
+            font-size: 2em;
             text-decoration: none;
         }
 
-        .contact-info .contact-item a:hover {
-            color: #005bb5;
+        .contact-icons a:hover {
+            color: #DA3B24;
         }
     </style>
 </head>
 
 <body>
     <div class="header">
-        <h1>References</h1>
+        <p>REFERENCES</p>
     </div>
+
     <div class="selections">
         <a href="index.html">Home</a>
         <a href="cv.html">CV</a>
-        <a href="research.html">Research</a>
         <a href="projects.html">Projects</a>
         <a href="references.html">References</a>
     </div>
+
     <div class="content">
-        <h3>Prof. Dr. Pietro Bonizzi (P.)</h3>
-        <p>
-            During my time at Maastricht University, I had the opportunity to work closely with Professor Bonizzi, who supervised my thesis. Together, we developed a state-of-the-art approach utilizing an image upscaling model from the generative AI domain to denoise ECG signals. Our approach outperformed traditional signal processing methods such as digital filters.
-        </p>
-        <p>
-            I highly recommend reaching out to Professor Bonizzi for feedback on my work ethic and performance, as he has suggested. He will be able to provide the most insightful information regarding our collaboration and the project we developed.
-        </p>
-        <div class="contact-info">
-            <h3>Contact Details</h3>
-            <div class="contact-item">
-                <i class="fas fa-user"></i>
-                <p><strong>Prof. Dr. Pietro Bonizzi (P.)</strong></p>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-building"></i>
-                <p>Associate Professor, Dept. of Advanced Computing Sciences, Faculty of Science and Engineering</p>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <p>Paul Henri Spaaklaan 1, 6229 EN Maastricht, C4.006</p>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <p><a href="mailto:pietro.bonizzi@maastrichtuniversity.nl">pietro.bonizzi@maastrichtuniversity.nl</a></p>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <p>+31(0)43 3883479</p>
-            </div>
-            <div class="contact-item">
-                <i class="fab fa-linkedin"></i>
-                <p><a href="https://www.linkedin.com/in/pietro-bonizzi-54b9165/" target="_blank">LinkedIn Profile</a></p>
-            </div>
-        </div>
+        <h4>Prof. Dr. Pietro Bonizzi (P.)</h4>
+        <p>During my time at Maastricht University, I worked closely with Professor Bonizzi, who supervised my thesis. 
+           Together, we developed a cutting-edge approach using a generative AI-based image upscaling model to denoise ECG signals.</p>
+        <p>Please contact Professor Bonizzi for feedback on my work ethic.</p>
+    </div>
+
+    <div class="contact-icons">
+
+        <a href="https://www.linkedin.com/in/pietro-bonizzi-54b9165/" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+            
+        </a>
+        <a href="mailto:pietro.bonizzi@maastrichtuniversity.nl" title="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="tel:+31433883479" title="Phone">
+            <i class="fas fa-phone"></i>
+        </a>
+      
     </div>
 </body>
 

@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>Projects - Pie de Boer</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="assets/icons8-synthesizer-100.png">
+    <link rel="icon" href="assets/synthesizer-icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600&display=swap');
 
         body {
-            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: "Andale Mono", monospace;
             font-size: 16px;
-            background-color: #ffffff;
-            color: #000000;
+            background-color: #1d1d1f;
+            color: #f5f5f7;
             margin: 0;
             padding: 0;
         }
 
         .header {
-            background-color: #f8f8f8;
+            background-color: #2c2c2e;
             border-bottom: 1px solid #e0e0e0;
-            padding: 20px;
+            padding: 10px;
             text-align: center;
         }
 
         .header h1 {
             margin: 0;
-            color: #333333;
+            color: #ffffff;
             font-weight: 600;
         }
 
@@ -40,13 +41,13 @@
 
         .selections a {
             margin: 0 20px;
-            color: #0071e3;
+            color: #ffffff;
             text-decoration: none;
             font-weight: 600;
         }
 
         .selections a:hover {
-            color: #005bb5;
+            color: #DA3B24;
         }
 
         .content {
@@ -61,9 +62,24 @@
             align-items: flex-start;
             max-width: 800px;
             padding: 20px;
-            border-bottom: 1px solid #e0e0e0;
+            border: 1px solid #444;
             margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #2c2c2e;
+            width: 100%;
         }
+
+        .project-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the images */
+}
+
+.rabobank-logo {
+    margin-top: 10px; /* Adds space between the project image and the logo */
+    width: 100px; /* Adjust size of the logo */
+    height: auto; /* Maintains the aspect ratio */
+}
 
         .project img {
             width: 150px;
@@ -77,14 +93,14 @@
         }
 
         .project-details h2 {
-            color: #333333;
+            color: #f5f5f7;
             font-size: 1.5em;
             font-weight: 600;
             margin-bottom: 10px;
         }
 
         .project-details p {
-            color: #555555;
+            color: #d1d1d3;
             margin: 0;
         }
 
@@ -92,28 +108,113 @@
             list-style-type: disc;
             margin-left: 20px;
             margin-top: 10px;
+            color: #d1d1d3;
         }
 
-        .project-details ul li {
-            color: #555555;
-            margin-bottom: 5px;
+        .project-links {
+            margin-top: 10px;
+        }
+
+        .project-links a {
+            background-color: #0a84ff;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-right: 10px;
+        }
+
+        .project-links a:hover {
+            background-color: #0071e3;
         }
     </style>
 </head>
+
 <body>
     <div class="header">
-        <h1>Projects</h1>
+        <p>PROJECTS</p>
     </div>
 
     <div class="selections">
         <a href="index.html">Home</a>
         <a href="cv.html">CV</a>
-        <a href="research.html">Research</a>
         <a href="projects.html">Projects</a>
         <a href="references.html">References</a>
     </div>
 
     <div class="content">
+
+         <!-- Thesis -->
+         <div class="project">
+            <div class="project-image">
+                <img src="assets/Image_Thesis.png" alt="Thesis Results" class="project-thumbnail">
+            </div>
+
+            <div class="project-details">
+                <h2>Conditional Diffusion Models for ECG Signal Denoising</h2>
+                <p><strong>2024 - 6 Months</strong></p>
+                <p>Developed a novel approach to ECG signal denoising by leveraging an image upscaling model (SR3), a conditional diffusion model. 
+                    By transforming ECG signals into Gram Angular Fields, we were able to apply image-based techniques. 
+                    Our research demonstrated superior performance compared to traditional signal processing methods, such as adaptive filters, low-pass filters, and moving averages.
+                </p>
+
+                <h3>Key Algorithms:</h3>
+                <ul>
+                    <li>Digital Filters</li>
+                    <li>Moving Average</li>
+                    <li>Conditional Diffusion</li>
+                </ul>
+
+                <h3>Tech Stack:</h3>
+                <ul>
+                    <li>Python: PyTorch, scikit-learn, Matplotlib, NumPy, Jupyter Notebook</li>
+                    <li>MATLAB: Deep Learning Toolbox, DSP System Toolbox, Signal Processing Toolbox, Statistics and Machine Learning Toolbox</li>
+                </ul>
+
+                <div class="project-links">
+                    <a href="https://github.com/piedeboer96/ECG-Signal-Denoising" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="assets/Thesis_Pie_de_Boer.pdf" download>
+                        <i class="fas fa-download"></i> Download Report
+                    </a>
+                </div>
+            </div>
+         </div>
+  
+
+        <!-- Rabobank -->
+<div class="project">
+    <div class="project-image">
+        <img src="assets/Image_Rabo.png" alt="Quantum Results" class="project-thumbnail">
+        <img src="assets/Rabo_Vertical.png" alt="Rabobank Logo" class="rabobank-logo">
+    </div>
+
+    <div class="project-details">
+        <h2>Portfolio Optimization using Quantum Methods</h2>
+        <p><strong>2023 - 6 Months</strong></p>
+        <p>
+            Contributed to an ongoing Rabobank project by further developing their quantum-based approach for (non-linear) portfolio optimization using the D-Wave package and Python. Leveraged the D-Wave API to run the optimization algorithms on real quantum hardware.
+        </p>
+
+        <h3>Key Algorithms:</h3>
+        <ul>
+            <li>(Constrainted) Non-Linear Optimization</li>
+        </ul>
+
+        <h3>Tech Stack:</h3>
+        <ul>
+            <li>Python: D-Wave </li>
+            <li>MATLAB</li>
+        </ul>
+    </div>
+</div>
+
 
         <!-- Project 1 -->
         <div class="project">
@@ -132,28 +233,22 @@
                     <li>Greedy Algorithm</li>
                     <li>Genetic Algorithm</li>
                 </ul>
-                
+
                 <h3>Tech Stack:</h3>
                 <ul>
                     <li>Java, JavaFX</li>
                 </ul>
 
-            
-
-            <!-- GitHub and Download Buttons -->
-            <div class="project-links">
-                <a href="https://github.com/piedeboer96/3D-BinPacking" target="_blank" class="btn project-link">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="assets/Report-1-1.pdf" download class="btn project-link">
-                    <i class="fas fa-download"></i> Download Report
-                </a>
+                <div class="project-links">
+                    <a href="https://github.com/piedeboer96/3D-BinPacking" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="assets/Report-1-1.pdf" download>
+                        <i class="fas fa-download"></i> Download Report
+                    </a>
+                </div>
             </div>
         </div>
-
-
-        </div>
-
 
         <!-- Project 2 -->
         <div class="project">
@@ -181,32 +276,29 @@
                 <ul>
                     <li>Java, Swing, AWT, Gradle</li>
                 </ul>
-           
 
-                <!-- GitHub and Download Buttons -->
                 <div class="project-links">
-                    <a href="https://github.com/piedeboer96/BingBoysGolf" target="_blank" class="btn project-link">
+                    <a href="https://github.com/piedeboer96/BingBoysGolf" target="_blank">
                         <i class="fab fa-github"></i> GitHub
                     </a>
-                    <a href="assets/Report-1-2.pdf" download class="btn project-link">
+                    <a href="assets/Report-1-2.pdf" download>
                         <i class="fas fa-download"></i> Download Report
                     </a>
                 </div>
             </div>
         </div>
 
-
         <!-- Project 3 -->
         <div class="project">
             <div class="project-image">
                 <img src="assets/Image_Project_2_1.png" alt="Stochastic Chess GUI" class="project-thumbnail">
             </div>
-        
+
             <div class="project-details">
                 <h2>Stochastic Chess</h2>
                 <p><strong>2023 - 6 Months</strong></p>
                 <p>Developed agents for stochastic chess, where a die introduces randomness to determine allowed moves.</p>
-        
+
                 <h3>Key Algorithms:</h3>
                 <ul>
                     <li>Genetic Algorithm (GA)</li>
@@ -215,35 +307,34 @@
                     <li>Beam Search</li>
                     <li>ExpectiMinMax</li>
                 </ul>
-        
+
                 <h3>Tech Stack:</h3>
                 <ul>
                     <li>Java, Swing, AWT, Gradle</li>
                 </ul>
-        
+
                 <div class="project-links">
-                    <a href="https://github.com/piedeboer96/DiceChess" target="_blank" class="btn project-link">
+                    <a href="https://github.com/piedeboer96/DiceChess" target="_blank">
                         <i class="fab fa-github"></i> GitHub
                     </a>
-                    <a href="assets/Report-2-1.pdf" download class="btn project-link">
+                    <a href="assets/Report-2-1.pdf" download>
                         <i class="fas fa-download"></i> Download Report
                     </a>
                 </div>
             </div>
         </div>
-        
 
         <!-- Project 4 -->
         <div class="project">
             <div class="project-image">
                 <img src="assets/Image_Project_2_2.png" alt="Multi-Modal Digital Assistant GUI" class="project-thumbnail">
             </div>
-        
+
             <div class="project-details">
                 <h2>Multi-Modal Digital Assistant</h2>
                 <p><strong>2023 - 6 Months</strong></p>
                 <p>Developed a digital assistant (ChatBot) with speech, text, and vision interaction capabilities.</p>
-        
+
                 <h3>Key Technologies:</h3>
                 <ul>
                     <li>Mel-frequency Cepstral Coefficients (MFCC)</li>
@@ -253,26 +344,25 @@
                     <li>Haar Cascade Classifiers</li>
                     <li>Eigenfaces, FaceNet</li>
                 </ul>
-        
+
                 <h3>Tech Stack:</h3>
                 <ul>
                     <li>Java, JavaSoundAPI, TarsosDSP, JavaFX</li>
                     <li>Python, Wav2Vec, Mozilla DeepSpeech, FaceNet, Librosa, PyTorch</li>
                 </ul>
-        
+
                 <div class="project-links">
-                    <a href="https://github.com/piedeboer96/Digital-Assistant-Audio-Processing" target="_blank" class="btn project-link">
+                    <a href="https://github.com/piedeboer96/Digital-Assistant-Audio-Processing" target="_blank">
                         <i class="fab fa-github"></i> GitHub
                     </a>
-                    <a href="assets/Report-2-2.pdf" download class="btn project-link">
+                    <a href="assets/Report-2-2.pdf" download>
                         <i class="fas fa-download"></i> Download Report
                     </a>
                 </div>
             </div>
         </div>
-        
-        
 
     </div>
 </body>
+
 </html>
