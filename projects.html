@@ -35,18 +35,19 @@
                 <!-- Watch Image -->
                 <img src="assets/thesis-watch.png" alt="Watch Display" class="w-32 h-32 object-cover rounded mb-4">
     
-                <!-- Reconstructions Image -->
-                <img src="assets/thesis_reconstructions.png" alt="Reconstructions" class="w-32 h-32 object-contain rounded mb-4">
+                <!-- Embedding -->
+                <img src="assets/embedding.png" alt="Reconstructions" class="w-32 h-32 object-cover rounded mb-4">
     
                 <!-- Embedding Image -->
-                <img src="assets/thesis-embedding-noisy.png" alt="Embedding of Gram Angular Fields" class="w-32 h-32 object-contain rounded mb-4">
+                <img src="assets/em-noise-removal-modified.png" alt="Noise Removal" class="w-32 h-32 object-cover rounded mb-4">
             </div>
     
             <!-- Text Content Section -->
             <div class="flex-1">
                 <h2 class="text-xl font-semibold mb-2">Conditional Diffusion Models for ECG Signal Denoising 🏥</h2>
                 <p class="mb-4 text-gray-400"><strong>Oct 2023 - Jun 2024</strong></p>
-                <p class="mb-4">Developed a novel state-of-the-art approach to ECG signal denoising by leveraging an image upscaling model (SR3), a conditional diffusion model. By transforming ECG signals into Gram Angular Fields, we were able to apply image-based techniques. Our research demonstrated superior performance compared to traditional signal processing methods, such as adaptive filters, low-pass filters, and moving averages.</p>
+                <p class="mb-4">Developed a novel state-of-the-art approach to ECG signal denoising by leveraging an image upscaling model (SR3), a conditional diffusion model. By transforming ECG signals into Gram Angular Fields, we were able to apply image-based techniques. We aimed to have one model that was able to remove multiple types of noise, where traditional methods are mostly focused on removing a specific type of noise.
+                    Our research demonstrated superior performance compared to traditional signal processing methods, such as adaptive filters, low-pass filters, and moving averages. The models were trained from scratch using Google Cloud using just the trial period and a low-tier GPU.</p>
                 
                 <!-- Two-column layout for Domains and Key Algorithms/Technology -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -56,6 +57,7 @@
                             <li>Machine Learning</li>
                             <li>Generative Artificial Intelligence (AI)</li>
                             <li>Digital Signal Processing</li>
+                            <li>Noise Supression</li>
                         </ul>
                     </div>
                     <div>
@@ -73,9 +75,9 @@
     
                 <h3 class="font-semibold mt-4">Stack:</h3>
                 <ul class="list-disc pl-5 mb-4">
-                    <li>Python - PyTorch, scikit-learn, Matplotlib, NumPy, Jupyter Notebook</li>
-                    <li>MATLAB - Deep Learning Toolbox, DSP System Toolbox, Signal Processing Toolbox, Statistics and Machine Learning Toolbox</li>
-                    <li>Google Cloud - Unix Terminal, Ubuntu, CUDA</li>
+                    <li>Python: PyTorch, scikit-learn, Matplotlib, NumPy, Jupyter Notebook</li>
+                    <li>MATLAB: Deep Learning Toolbox, DSP System Toolbox, Signal Processing Toolbox, Statistics and Machine Learning Toolbox</li>
+                    <li>Google Cloud: Unix Terminal, Debian, CUDA</li>
                 </ul>
     
                 <div class="mt-2">
@@ -87,43 +89,56 @@
     </div>
     
 
+        
         <!-- Rabobank -->
-        <div class="bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4">
-            <div class="flex">
-                <img src="assets/Image_Rabo.png" alt="Quantum Results" class="w-32 h-32 object-contain rounded">
-                <div class="ml-4 flex-1">
-                    <h2 class="text-xl font-semibold mb-2">Portfolio Optimization using Quantum Methods 🏦</h2>
-                    <p class="mb-4 text-gray-400"><strong>Sep 2023 - Feb 2024</strong></p> <!-- Made text gray and aligned to the right -->
-
-                    <p class="mb-4">Contributed to an ongoing Rabobank project by further developing their quantum-based approach for (non-linear) portfolio optimization using the D-Wave package and Python. Leveraged the D-Wave API to run the optimization algorithms on real quantum hardware. This project had an interesting focus in investing in a sustainable fashion, e.g. as listed in living up to certain CO2 emission.</p>
-
-                    <h3 class="font-semibold mt-4">Domains: </h3>
-                    <ul class="list-disc pl-5 mb-4">
-                        <li>Finance</li>
-                        <li>Statistics</li>
-                        <li>Risk Management</li>
-                    </ul>
-
-
-                    <h3 class="font-semibold mt-4">Key Algorithms:</h3>
-                    <ul class="list-disc pl-5 mb-4">
-                        <li>(Constrainted) Non-Linear Optimization</li>
-                    </ul>
-
-                    <h3 class="font-semibold mt-4">Tech Stack:</h3>
-                    <ul class="list-disc pl-5 mb-4">
-                        <li>Python - DWave</li>
-                        <li>MATLAB - YALMIP</li>
-                    </ul>
-                </div>
-            </div>
+<div class="bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4">
+    <div class="flex">
+        <div class="flex flex-col mr-4">  <!-- Container for stacking images vertically -->
+            <img src="assets/quantum-epic.webp" alt="Quantum Image" class="w-32 h-32 object-cover rounded-lg mb-4">
+            <img src="assets/rabobank-square.jpg" alt="Rabobank Logo" class="w-32 h-32 object-cover rounded-lg mb-4">
         </div>
+        
+        <div class="ml-4 flex-1">
+            <h2 class="text-xl font-semibold mb-2">Portfolio Optimization using Quantum Methods ⚛️</h2>
+            <p class="mb-4 text-gray-400"><strong>Sep 2023 - Feb 2024</strong></p> <!-- Made text gray and aligned to the right -->
+
+            <p class="mb-4">Contributed to an ongoing Rabobank project by further developing their quantum-based approach for (non-linear) portfolio optimization using the D-Wave package and Python. Leveraged the D-Wave API to run the optimization algorithms on real quantum hardware. This project had an interesting focus in investing in a sustainable fashion, e.g. as listed in living up to certain CO2 emission.</p>
+
+            <h3 class="font-semibold mt-4">Domains: </h3>
+            <ul class="list-disc pl-5 mb-4">
+                <li>Finance</li>
+                <li>Statistics</li>
+                <li>Risk Management</li>
+                <li>Quantum Computing</li>
+            </ul>
+
+            <h3 class="font-semibold mt-4">Key Algorithms:</h3>
+            <ul class="list-disc pl-5 mb-4">
+                <li>(Constrainted) Non-Linear Optimization</li>
+            </ul>
+
+            <h3 class="font-semibold mt-4">Tech Stack:</h3>
+            <ul class="list-disc pl-5 mb-4">
+                <li>Python: D-Wave</li>
+                <li>MATLAB: YALMIP</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 
 
         <!-- Stohcastic Chess -->
         <div class="bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4">
             <div class="flex">
-                <img src="assets/Image_Project_2_1.png" alt="Dice Chess GUI" class="w-32 h-32 object-contain rounded">
+                <div class="flex flex-col mr-4">  <!-- Container for stacking images vertically -->
+                    <img src="assets/dice-modified.png" alt="Dice" class="w-32 h-32 object-contain rounded-lg mb-4"> 
+                    <img src="assets/chessboard-only-modified.png" alt="Chessboard" class="w-32 h-32 object-contain rounded-lg mb-4"> 
+                    <img src="assets/chess-value-network-modified.png" alt="Chessboard" class="w-32 h-32 object-contain rounded-lg mb-4"> 
+                    
+                    
+                </div>
+                
                 <div class="ml-4 flex-1">
                     <h3 class="text-xl font-semibold">Dice Chess 🎲</h3>
                     <p class="text-gray-400"><strong>Sep 2022 - Jun 2023</strong></p>
@@ -167,9 +182,11 @@
             <div class="flex">
                 <!-- Container for stacking images vertically -->
                 <div class="flex flex-col">
+                    <!-- Shipment-->
+                    <img src="assets/cargo-ship.jpg.avif" alt="2D and 3D Bin-Packing GUI" class="w-32 h-32 object-contain rounded mb-4">
                     <!-- 3D Pacakge -->
                     <img src="assets/packing_square.png" alt="2D and 3D Bin-Packing GUI" class="w-32 h-32 object-cover rounded mb-4">
-        
+
                     <!-- Tiled Pentominos-->
                     <img src="assets/pent-tiled.png" alt="Packing Problem Dancing Links" class="w-32 h-50 object-contain rounded">
                              
@@ -178,8 +195,7 @@
                 <div class="ml-4 flex-1">
                     <h3 class="text-xl font-semibold mb-2">Packing Problem 📦</h3>
                     <p class="mb-4 text-gray-400"><strong>Sep 2021 - Jan 2022</strong></p>
-                    <p class="mb-4">Developed algorithms from scratch to pack 2D or 3D packages efficiently into a container. Initial building a tetris style solver, gradually going to 3D packages. This all includes GUIs programmed in Swing and JavaFX.</p>
-                    
+                    <p class="mb-4">Developed algorithms from scratch to pack 2D or 3D packages efficiently into a container. Initially built a Tetris-style solver, gradually advancing to 3D packages. This project was a great work in the domain of algorithms, especially as it serves as an excellent sandbox for learning how to work with greedy and genetic algorithms. Additionally, it provided an opportunity to implement Donald Knuth's "Dancing Links," which can also be used for the famous exact cover problem, Sudoku. This project included GUIs programmed in Swing and JavaFX.</p>                    
                     <h3 class="font-semibold mt-4">Domains: </h3>
                     <ul class="list-disc pl-5 mb-4">
                         <li>Operation Research</li>
@@ -259,34 +275,51 @@
             </div>
         </div>
 
-          <!-- Multimodal Digital Assitant -->
-          <div class="bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4">
+        <!-- Multimodal Digital Assistant -->
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4">
             <div class="flex">  <!-- Flexbox layout for side-by-side positioning -->
                 <div class="flex flex-col mr-4">  <!-- Container for stacking images vertically -->
-                    <img src="assets/Image_Project_2_2.png" alt="3D Golf Simulator GUI" class="w-32 h-32 object-contain rounded mb-4">
+                    <img src="assets/chatbot.jpg.avif" alt="Stock ChatBot" class="w-32 h-32 object-contain rounded mb-2">
+                    <img src="assets/wav-2-vec-modified.png" alt="Wav2Vec Overview" class="w-32 h-32 object-contain rounded mb-2">
+                    
+                    <img src="assets/simple-word-2-vec-modified.png" alt="Word-2-Vec Overview" class="w-32 h-32 object-contain rounded mb-2">
+                    <!-- <img src="assets/face-net-modified.png" alt="FaceNet Overview" class="w-32 h-32 object-contain rounded mb-2"> -->
+                    <!-- <img src="assets/parser-modified.png" alt="Parser" class="w-32 h-32 object-contain rounded mb-2"> -->
                 </div>
+                
                 
                 <div class="flex-1">  <!-- Flexbox for the text content -->
                     <h3 class="text-xl font-semibold">Multi-Modal Digital Assistant 🤖</h3>
                     <p class="text-gray-400"><strong>Feb 2023 - Jun 2023</strong></p>
-                    <p class="mb-4">Developed a digital assistant (ChatBot) with speech, text, and vision interaction capabilities. This chatbot integrated models with features as face detetection, speech recognition and speaker identification.</p>
+                    <p class="mb-4">Developed a digital assistant (ChatBot) with speech, text, and vision interaction capabilities. 
+                        This chatbot integrated model featured face detection, speech recognition, and speaker identification. In addition to this, it was able to have multi-turn dialogs, after either transcribing the text or using the keyboard as an input device in the first place. Initially starting with pre-processing and simple distance measure, word-2-vec to context-free grammars.</p>
 
-                    <h3 class="font-semibold mt-4">Domains: </h3>
-                    <ul class="list-disc pl-5 mb-4">
-                        <li>Image- and Video Processing</li>
-                        <li>Speech Processing</li>
-                        <li>Natural Language Processing (NLP)</li>
-                    </ul>
 
-                    <h3 class="font-semibold mt-4">Key Technologies:</h3>
-                    <ul class="list-disc pl-5 mb-4">
-                        <li>Mel-frequency Cepstral Coefficients (MFCC)</li>
-                        <li>Gaussian Mixture Models (GMM)</li>
-                        <li>Wav2Vec-2.0</li>
-                        <li>Mozilla DeepSpeech</li>
-                        <li>Haar Cascade Classifiers</li>
-                        <li>Eigenfaces, FaceNet</li>
-                    </ul>
+                    <div class="flex">
+                        <div class="flex-1 mr-4">  <!-- Column for Domains -->
+                            <h4 class="font-semibold">Domains:</h4>
+                            <ul class="list-disc pl-5 mb-4">
+                                <li>Image- and Video Processing</li>
+                                <li>Speech Processing</li>
+                                <li>Natural Language Processing (NLP)</li>
+                                <li>Information Retrieval</li>
+                            </ul>
+                        </div>
+                        <div class="flex-1">  <!-- Column for Key Technologies -->
+                            <h4 class="font-semibold">Key Technologies:</h4>
+                            <ul class="list-disc pl-5 mb-4">
+                                <li>Mel-frequency Cepstral Coefficients (MFCC)</li>
+                                <li>Gaussian Mixture Models (GMM)</li>
+                                <li>Wav2Vec-2.0</li>
+                                <li>Mozilla DeepSpeech</li>
+                                <li>Haar Cascade Classifiers</li>
+                                <li>Eigenfaces, FaceNet</li>
+                                <li>Word-2-Vec</li>
+                                <li>Context Free Grammars (Parsing)</li>
+                            </ul>
+                            
+                        </div>
+                    </div>
 
                     <h3 class="font-semibold mt-4">Tech Stack:</h3>
                     <ul class="list-disc pl-5 mb-4">
@@ -301,6 +334,7 @@
                 </div>
             </div>
         </div>
+
         
     </main>
 
