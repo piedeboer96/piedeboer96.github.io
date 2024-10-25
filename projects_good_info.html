@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Pie de Boer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-gray-100 font-mono">
+    <header class="bg-gray-800 border-b border-gray-700 p-4 text-center">
+        <h1 class="text-2xl font-semibold">Projects</h1>
+    </header>
+
+    <nav class="flex justify-center py-4">
+        <a href="index.html" class="mx-4 text-gray-300 hover:text-red-400">Home</a>
+        <a href="projects.html" class="mx-4 text-gray-300 hover:text-red-400">Projects</a>
+    </nav>
+
+    <main class="flex flex-col items-center p-4">
+        <div class="flex flex-col items-center text-center mb-10">
+            <img src="assets/selfie-berlin.png" alt="Pie de Boer" class="rounded-full w-36 h-36 object-cover mb-5 shadow-lg">
+            <h2 class="mb-2 text-3xl font-semibold">Pie de Boer</h2>
+            <p class="text-lg font-light text-gray-400">software developer, musician, nice guy</p>
+            <p class="text-md text-gray-500">based in berlin</p>
+        </div>
+
+        <!-- Project Items -->
+        <div class="w-full max-w-2xl">
+
+            <!-- Thesis Project -->
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4">
+            <div class="flex">
+                <img src="assets/Image_Thesis.png" alt="Thesis Results" class="w-32 h-32 object-cover rounded">
+                <div class="ml-4 flex-1"> <!-- Added flex-1 to allow more space -->
+                    <h2 class="text-xl font-semibold mb-2">Conditional Diffusion Models for ECG Signal Denoising</h2>
+                    <p class="mb-4 text-gray-400"><strong>Oct 2023 - Jun 2024</strong></p> <!-- Made text gray and aligned to the right -->
+
+                    <p class="mb-4">Developed a novel approach to ECG signal denoising by leveraging an image upscaling model (SR3), a conditional diffusion model. By transforming ECG signals into Gram Angular Fields, we were able to apply image-based techniques. Our research demonstrated superior performance compared to traditional signal processing methods, such as adaptive filters, low-pass filters, and moving averages.</p>
+                    
+                    <h3 class="font-semibold mt-4">Domains: </h3>
+                    <ul class="list-disc pl-5 mb-4">
+                        <li>Machine Learning</li>
+                        <li>Generative Artificial Intelligence (AI)</li>
+                        <li>Signal Processing</li>
+                    </ul>
+
+
+                    <h3 class="font-semibold mt-4">Key Algorithms/Technology:</h3>
+                    <ul class="list-disc pl-5 mb-4">
+                        <li>Conditional Diffusion</li>
+                        <li>U-Nets</li>
+                        <li>Digital Filters</li>
+                        <li>Moving Average</li>
+                        <li>Least Means Square</li>
+                    </ul>
+
+                    <h3 class="font-semibold mt-4">Stack:</h3>
+                    <ul class="list-disc pl-5 mb-4">
+                        <li>Python - PyTorch, scikit-learn, Matplotlib, NumPy, Jupyter Notebook</li>
+                        <li>MATLAB -  Deep Learning Toolbox, DSP System Toolbox, Signal Processing Toolbox, Statistics and Machine Learning Toolbox</li>
+                        <li>Google Cloud - Unix Terminal, Ubuntu, CUDA</li>
+                    </ul>
+
+                    <div class="mt-2">
+                        <a href="https://github.com/piedeboer96/ECG-Signal-Denoising" target="_blank" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="assets/Thesis_Pie_de_Boer.pdf" download class="bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-700"><i class="fas fa-download"></i> Download Report</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- x Project -->
+        <div class="bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4">
+            <div class="flex">
+                <img src="assets/Image_Rabo.png" alt="Quantum Results" class="w-32 h-32 object-cover rounded">
+                <div class="ml-4 flex-1"> <!-- Added flex-1 for better space utilization -->
+                    <h2 class="text-xl font-semibold mb-2">Portfolio Optimization using Quantum Methods</h2>
+                    <p class="mb-4 text-gray-400"><strong>Sep 2023 - Feb 2024</strong></p> <!-- Made text gray and aligned to the right -->
+
+                    <p class="mb-4">Contributed to an ongoing Rabobank project by further developing their quantum-based approach for (non-linear) portfolio optimization using the D-Wave package and Python. Leveraged the D-Wave API to run the optimization algorithms on real quantum hardware.</p>
+
+                    <h3 class="font-semibold mt-4">Domains: </h3>
+                    <ul class="list-disc pl-5 mb-4">
+                        <li>Finance</li>
+                        <li>Statistics</li>
+                        <li>Risk Management</li>
+                    </ul>
+
+
+                    <h3 class="font-semibold mt-4">Key Algorithms:</h3>
+                    <ul class="list-disc pl-5 mb-4">
+                        <li>(Constrainted) Non-Linear Optimization</li>
+                    </ul>
+
+                    <h3 class="font-semibold mt-4">Tech Stack:</h3>
+                    <ul class="list-disc pl-5 mb-4">
+                        <li>Python - D-Wave</li>
+                        <li>MATLAB - YALMIP</li>
+                    </ul>
+
+                    <div class="mt-2">
+                        <a href="https://github.com/piedeboer96/quantum-optimization" target="_blank" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"><i class="fab fa-github"></i> GitHub</a>
+                        <!-- Add any additional links if needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Project 1 -->
+    <div class="bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4">
+        <div class="flex">
+            <img src="assets/Image_Project_1_1.png" alt="2D and 3D Bin-Packing GUI" class="w-32 h-32 object-cover rounded">
+            <div class="ml-4 flex-1"> <!-- Added flex-1 for better space utilization -->
+                <h2 class="text-xl font-semibold mb-2">Packing Problem</h2>
+                <p class="mb-4 text-gray-400"><strong>Sep 2021 - Jan 2022</strong></p> <!-- Made text gray and aligned to the right -->
+
+                <p class="mb-4">Developed algorithms from scratch to pack 2D or 3D packages efficiently into a container. Initial building a tetris style solver, gradualing going to 3D pacakages. This all including GUIs programmed in Swing and JavaFX.</p>
+                
+                <h3 class="font-semibold mt-4">Domains: </h3>
+                <ul class="list-disc pl-5 mb-4">
+                    <li>Operation Research</li>
+                    <li>Search</li>
+                    <li>Constraint Satisfaction</li>
+                    <li>Game Development</li>
+                </ul>
+
+                <h3 class="font-semibold mt-4">Key Algorithms:</h3>
+                <ul class="list-disc pl-5 mb-4">
+                    <li>Algorithm X (Dancing Links)</li>
+                    <li>Greedy Algorithm</li>
+                    <li>Genetic Algorithm</li>
+                </ul>
+
+                <h3 class="font-semibold mt-4">Tech Stack:</h3>
+                <ul class="list-disc pl-5 mb-4">
+                    <li>Java, JavaFX, Swing</li>
+                </ul>
+
+                <div class="mt-2">
+                    <a href="https://github.com/piedeboer96/3D-BinPacking" target="_blank" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="assets/Report-1-1.pdf" download class="bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-700"><i class="fas fa-download"></i> Download Report</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Project 2 -->
+<div class="bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4">
+    <div class="flex">
+        <img src="assets/Image_Project_1_2.png" alt="3D Golf Simulator GUI" class="w-32 h-32 object-cover rounded">
+        <div class="ml-4 flex-1"> <!-- Added flex-1 for better space utilization -->
+            <h2 class="text-xl font-semibold mb-2">3D Golf Simulator</h2>
+            <p class="mb-4 text-gray-400"><strong>Feb 2022 - Jun 2022</strong></p> <!-- Made text gray and aligned to the right -->
+
+            <p class="mb-4">Developed a physics engine and agents using advanced optimization methods to play golf on 3D terrain. This project had a heavy focus on optimzation, numerical mathematics and physics (mechanics).</p>
+
+            <h3 class="font-semibold mt-4">Domains: </h3>
+            <ul class="list-disc pl-5 mb-4">
+                <li>Optimization</li>
+                <li>Physics</li>
+                <li>Game Development</li>
+            </ul>
+
+            <h3 class="font-semibold mt-4">Key Algorithms:</h3>
+            <ul class="list-disc pl-5 mb-4">
+                <li>Particle Swarm Optimization (PSO)</li>
+                <li>Genetic Algorithm (GA)</li>
+                <li>Euler, Runge-Kutta</li>
+                <li>FloodFill</li>
+                <li>Simulated Annealing, Hill Climbing</li>
+                <li>BattleRoyal Optimization</li>
+                <li>Splines</li>
+            </ul>
+
+            <h3 class="font-semibold mt-4">Tech Stack:</h3>
+            <ul class="list-disc pl-5 mb-4">
+                <li>Java, Gradle, LibGDX</li>
+            </ul>
+
+            <div class="mt-2">
+                <a href="https://github.com/piedeboer96/BingBoysGolf" target="_blank" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"><i class="fab fa-github"></i> GitHub</a>
+                <a href="assets/Report-1-2.pdf" download class="bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-700"><i class="fas fa-download"></i> Download Report</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project 3 -->
+<div class="bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4">
+    <div class="flex">
+        <img src="assets/Image_Project_2_1.png" alt="Stochastic Chess GUI" class="w-32 h-32 object-cover rounded">
+        <div class="ml-4 flex-1"> <!-- Added flex-1 for better space utilization -->
+            <h2 class="text-xl font-semibold mb-2">Stochastic Chess</h2>
+            <p class="mb-4 text-gray-400"><strong>Feb 2023 - Jun 2023</strong></p> <!-- Made text gray and aligned to the right -->
+            <p class="mb-4">Developed agents for stochastic chess, where a die introduces randomness to determine allowed moves.</p>
+
+            <h3 class="font-semibold mt-4">Domains: </h3>
+            <ul class="list-disc pl-5 mb-4">
+                <li>Search</li>
+                <li>Game Development</li>
+                <li>Reinforcement Learning</li>
+            </ul>
+
+            <h3 class="font-semibold mt-4">Key Algorithms:</h3>
+            <ul class="list-disc pl-5 mb-4">
+                <li>Genetic Algorithm (GA)</li>
+                <li>(Deep) Q-Learning</li>
+                <li>Hill Climbing</li>
+                <li>Beam Search</li>
+                <li>ExpectiMinMax</li>
+                <li>Monte Carlo Tree Search</li>
+            </ul>
+
+            <h3 class="font-semibold mt-4">Tech Stack:</h3>
+            <ul class="list-disc pl-5 mb-4">
+                <li>Java, Swing, AWT, Gradle</li>
+            </ul>
+
+            <div class="mt-2">
+                <a href="https://github.com/piedeboer96/StochasticChess" target="_blank" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"><i class="fab fa-github"></i> GitHub</a>
+                <a href="assets/Report-1-2.pdf" download class="bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-700"><i class="fas fa-download"></i> Download Report</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Project 4 -->
+<div class="bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4">
+    <div class="flex">
+        <img src="assets/Image_Project_2_2.png" alt="Multi-Modal Digital Assistant GUI" class="w-32 h-32 object-cover rounded">
+        <div class="ml-4 flex-1"> <!-- Added flex-1 for better space utilization -->
+            <h2 class="text-xl font-semibold mb-2">Multi-Modal Digital Assistant</h2>
+            <p class="mb-4 text-gray-400"><strong>Sep 2022 - Jan 2023</strong></p> <!-- Made text gray and aligned to the right -->
+
+            <p class="mb-4">Developed a digital assistant (ChatBot) with speech, text, and vision interaction capabilities. This chatbot integrated models with features as face detetection, speech recognition and speaker identification.</p>
+
+            <h3 class="font-semibold mt-4">Domains: </h3>
+            <ul class="list-disc pl-5 mb-4">
+                <li>Image- and Video Processing</li>
+                <li>Speech Processing</li>
+                <li>Natural Language Processing (NLP)</li>
+            </ul>
+
+            <h3 class="font-semibold mt-4">Key Technologies:</h3>
+            <ul class="list-disc pl-5 mb-4">
+                <li>Mel-frequency Cepstral Coefficients (MFCC)</li>
+                <li>Gaussian Mixture Models (GMM)</li>
+                <li>Wav2Vec-2.0</li>
+                <li>Mozilla DeepSpeech</li>
+                <li>Haar Cascade Classifiers</li>
+                <li>Eigenfaces, FaceNet</li>
+            </ul>
+
+            <h3 class="font-semibold mt-4">Tech Stack:</h3>
+            <ul class="list-disc pl-5 mb-4">
+                <li>Java - JavaSoundAPI, TarsosDSP, JavaFX, Gradle</li>
+                <li>Python - Wav2Vec, Mozilla DeepSpeech, FaceNet, Librosa, PyTorch</li>
+            </ul>
+
+            <div class="mt-2">
+                <a href="https://github.com/piedeboer96/Digital-Assistant-Audio-Processing" target="_blank" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"><i class="fab fa-github"></i> GitHub</a>
+                <a href="assets/Report-2-2.pdf" download class="bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-700"><i class="fas fa-download"></i> Download Report</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+           
+        </div>
+    </main>
+</body>
+
+</html>

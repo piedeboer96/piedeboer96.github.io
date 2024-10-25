@@ -5,130 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Pie de Boer</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="assets/synthesizer-icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600&display=swap');
-
-        body {
-            font-family: "Andale Mono", monospace;
-            font-size: 16px;
-            background-color: #1d1d1f;
-            color: #f5f5f7;
-            margin: 0;
-            padding: 0;
-        }
-
-        .header {
-            background-color: #2c2c2e;
-            border-bottom: 1px solid #e0e0e0;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .header h1 {
-            margin: 0;
-            color: #ffffff;
-            font-weight: 600;
-        }
-
-        .selections {
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .selections a {
-            margin: 0 20px;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .selections a:hover {
-            color: #DA3B24;
-        }
-
-        .content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .content img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            margin-bottom: 20px;
-        }
-
-        .content h2 {
-            color: #f5f5f7;
-            font-size: 1.5em;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .content p {
-            max-width: 600px;
-            line-height: 1.6;
-            color: #d1d1d3;
-        }
-
-        .social-icons {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .social-icons a {
-            color: #ffffff;
-            font-size: 2em;
-            text-decoration: none;
-        }
-
-        .social-icons a:hover {
-            color:  #DA3B24;
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
-    <div class="header">
-        <p>Home</p>
-    </div>
+<body class="font-sans text-base bg-gray-900 text-gray-100">
 
-    <div class="selections">
-        <a href="index.html">Home</a>
-        <a href="cv.html">CV</a>
-        <a href="projects.html">Projects</a>
-        <a href="references.html">References</a>
-    </div>
-
-    <div class="content">
-        <img src="assets/selfie-berlin.png" alt="Pie de Boer">
-        
-        <p>
-            Creative. People-Oriented. Problem Solver.
-        </p>
-
-        <h3>Intro 🐦‍🔥</h3> 
-        <p> I love creating things. Whether it's coding projects, building applications, or writing songs.
-            Focused on solving problems, excited to share my vision with the world.  
-        </p>
-    
-        <div class="social-icons">
-            <a href="https://github.com/piedeboer96" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/pie-de-boer-6b6663265/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:piedeboer96@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-            <a href="tel:+31618928452" title="Phone"><i class="fas fa-phone"></i></a>
+    <nav class="bg-gray-800">
+        <div class="container mx-auto flex justify-center py-4">
+            <a href="index.html" class="mx-5 text-white font-semibold hover:text-red-500 transition duration-300">Home</a>
+            <a href="projects.html" class="mx-5 text-white font-semibold hover:text-red-500 transition duration-300">Projects</a>
         </div>
-    </div>
+    </nav>
+
+    <main class="container mx-auto p-5">
+        <div class="flex flex-col items-center text-center mb-10">
+            <img src="assets/muscular-sexy.png" alt="Pie de Boer" class="rounded-full w-36 h-36 object-cover mb-5 shadow-lg">
+            <h2 class="mb-2 text-3xl font-semibold">Pie de Boer</h2>
+            <p class="text-lg font-light text-gray-400">Software Developer, Musician, Tech Nerd</p>
+            <p class="text-md text-gray-500">Berlin</p>
+        </div>
+
+        <section class="mb-10">
+            <h2 class="text-white text-2xl font-semibold mb-4">Intro 👾</h2>
+            <p class="max-w-2xl leading-6 text-gray-400 mb-5">
+                Hoi! Glad you are here... My background is in data science and artificial intelligence. In addition to my strong research and reporting skills, I enjoy presenting technical work to diverse audiences, persuading them about specific ideas or products.
+                Creating things, whether it's coding projects, building applications, or writing songs, is my passion.
+                Check out my projects on this page. Reports are included, in case you like to learn how to build your own golf agents or how you can use generative AI to clean ECG signals!
+            </p>
+        </section>
+
+        <section class="mb-10">
+            <h2 class="text-white text-2xl font-semibold mb-4">Curriculum Vitae 🌲</h2>
+            <p class="text-gray-400 mb-5">Learn more about me here!</p>
+            <a href="assets/cv-oct-temp.pdf" download class="bg-blue-600 text-white py-2 px-4 rounded font-semibold inline-flex items-center space-x-2 hover:bg-blue-700 transition duration-300">
+                <i class="fas fa-download"></i>
+                <span>Download CV</span>
+            </a>
+        </section>
+
+        <section>
+            <h2 class="text-white text-2xl font-semibold mb-4">Contact 📳</h2>
+            <p class="text-gray-400 mb-5">Let's get in touch! I love to chat in English, German, or Dutch. Connect with me on LinkedIn, GitHub, or call me—whichever you prefer!</p>
+            
+            <div class="flex justify-center gap-5 mb-10">
+                <a href="https://github.com/piedeboer96" target="_blank" title="GitHub" class="text-white text-3xl hover:text-red-500 transition duration-300"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/pie-de-boer-6b6663265/" target="_blank" title="LinkedIn" class="text-white text-3xl hover:text-red-500 transition duration-300"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:piedeboer96@gmail.com" title="Email" class="text-white text-3xl hover:text-red-500 transition duration-300"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+31618928452" title="Phone" class="text-white text-3xl hover:text-red-500 transition duration-300"><i class="fas fa-phone"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 py-4 text-center">
+        <p class="text-gray-500">© 2024 Pie de Boer. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>
