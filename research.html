@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Pie de Boer</title>
+    <link rel="icon" href="assets/synthesizer-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #FFFFFF; /* Tailwind yellow-400 */
+        }
+
+        .tech-stack {
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-base bg-gray-900 text-gray-100">
+
+    <nav class="bg-gray-800">
+        <div class="container mx-auto py-4">
+            <a href="index.html" class="mx-5 text-white font-semibold hover:text-red-500 transition duration-300">Home</a>
+            <a href="research.html" class="mx-5 text-white font-semibold hover:text-red-500 transition duration-300">Research</a>
+            <a href="projects.html" class="mx-5 text-white font-semibold hover:text-red-500 transition duration-300">Projects</a>
+            <a href="flappy.html" class="mx-5 text-white font-semibold hover:text-red-500 transition duration-300">Secret</a>
+        </div>
+    </nav>  
+    
+
+   <main class="container mx-auto p-5">
+        <div class="flex flex-col items-center text-center mb-10">
+            <img src="assets/headshot-pie.png" alt="Pie de Boer" class="rounded-full w-36 h-36 object-cover mb-5 shadow-lg">
+            <h2 class="mb-2 text-4xl font-bold">Pie de Boer</h2>
+            <p class="text-lg font-light text-gray-400">Software Developer, Tech Nerd</p>
+            <p class="text-md text-gray-500">...</p>
+        </div>
+
+<!-- Thesis Project -->
+<div class="bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4 shadow-lg">
+    <!-- Left side content (Text) -->
+    <div class="flex-1">
+        <h2 class="section-title">Conditional Diffusion Models for ECG Signal Denoising 🏥</h2>
+        <p class="text-gray-400"><strong>Oct 2023 - Jun 2024</strong></p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+            <!-- Image 1 -->
+            <div class="relative group">
+                <img src="assets/thesis-watch.png" alt="Watch Display" class="w-full h-48 object-cover rounded-lg shadow-md transition duration-300 transform group-hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 text-white flex items-center justify-center text-center p-2 transition-opacity duration-300">
+                    <p class="text-sm">The denoising of ECG signals is important for doing correct diagnosis with devices such as smart watches.</p>
+                </div>
+            </div>
+        
+            <!-- Image 2 -->
+            <div class="relative group">
+                <img src="assets/embbeded-noisy-ecg.png" alt="Reconstructions" class="w-full h-48 object-cover rounded-lg shadow-md transition duration-300 transform group-hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 text-white flex items-center justify-center text-center p-2 transition-opacity duration-300">
+                    <p class="text-sm">We utilized Gram Angular Fields to have loselessly embedding of ECG signals (1D) into the image domain (2D). This allowed us to directly work with the SR3 model.</p>
+                </div>
+            </div>
+        
+            <!-- Image 3 -->
+            <div class="relative group">
+                <img src="assets/sr3-logic.PNG" alt="Reconstructions" class="w-full h-48 object-cover rounded-lg shadow-md transition duration-300 transform group-hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 text-white flex items-center justify-center text-center p-2 transition-opacity duration-300">
+                    <p class="text-sm">The original goal of SR3 is to recreate a high resolution (target) given a low resolution (source) image. We utilized it to map a noisy ECG signal to a clean ECG by embedding the ECG signals as Gram Angular Fields.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Highlights Section -->
+        <p class="text-gray-400 text-sm mt-6"><strong>Highlights</strong></p>
+        <ul class="list-disc pl-5 text-sm text-gray-400 mb-4">
+            <li><strong>Novel Approach:</strong> Used SR3, a model originally designed for image upscaling, to denoise ECG signals by transforming them into Gram Angular Fields. This allowed us to apply advanced image processing techniques to 1D ECG data.</li>
+            <li><strong>Multi-Noise Removal:</strong> Unlike traditional methods that are designed to remove only one type of noise, our model was capable of eliminating multiple types of noise simultaneously (e.g., electrode motion, muscle artifacts, and composite noise).</li>
+            <li><strong>Superior Performance:</strong> Our approach demonstrated superior performance compared to conventional signal processing methods like adaptive filters, low-pass filters, and moving averages that are commonly used in MATLAB toolboxes.</li>
+            <li><strong>Training & Resources:</strong> The model was trained from scratch using Google Cloud services, making use of the trial period and a low-tier GPU with CUDA interfacing through the Linux terminal.</li>
+        </ul>
+
+        <!-- Technologies Section -->
+        <p class="text-gray-400 text-sm"><strong>Technologies</strong></p>
+
+        <!-- <div class="grid grid-rows-2 gap-4 mt-4">
+            <div>
+                <h4 class="font-semibold mt-4">Domains:</h4>
+                <ul class="list-disc pl-5">
+                    <li>Machine Learning</li>
+                    <li>Generative AI</li>
+                    <li>Biomedical Signal Processing</li>
+                    <li>Noise Suppression</li>
+                </ul>
+            </div>
+            <div class="flex-1">
+                <h4 class="font-semibold">Key Technologies:</h4>
+                <ul class="list-disc pl-5">
+                    <li>Conditional Diffusion</li>
+                    <li>U-Nets</li>
+                    <li>Gram Angular Fields</li>
+                    <li>Digital Filters</li>
+                    <li>Moving Average</li>
+                    <li>Least Means Square</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="tech-stack">Tech Stack:</h3>
+        <ul class="list-disc pl-5 mb-4">
+            <li>Python - PyTorch, scikit-learn, Matplotlib, NumPy, Jupyter Notebook</li>
+            <li>MATLAB - Deep Learning Toolbox, DSP System Toolbox, Signal Processing Toolbox, Statistics and Machine Learning Toolbox</li>
+            <li>Google Cloud - Unix Terminal, Debian, CUDA</li>
+        </ul> -->
+        
+        <!-- Logos Section -->
+        <div class="mt-6 flex items-center space-x-6">
+            <!-- Python Logo -->
+            <div class="tooltip-container">
+                <img src="assets/python-logo-only.svg" alt="Python Logo" class="h-12 w-auto" />
+                <span class="tooltip-text">Python</span>
+            </div>
+            <!-- PyTorch Logo -->
+            <div class="tooltip-container">
+                <img src="assets/pytorch-icon.svg" alt="PyTorch Logo" class="h-12 w-auto" />
+                <span class="tooltip-text">PyTorch</span>
+            </div>
+            <!-- Google Cloud Logo -->
+            <div class="tooltip-container">
+                <img src="assets/google-cloud-logo.webp" alt="Google Cloud Logo" class="h-12 w-auto" />
+                <span class="tooltip-text">Google Cloud</span>
+            </div>
+            <!-- Debian Logo -->
+            <div class="tooltip-container">
+                <img src="assets/debian-logo.png" alt="Debian Logo" class="h-12 w-auto" />
+                <span class="tooltip-text">Debian</span>
+            </div>
+            <!-- Cuda Logo -->
+            <div class="tooltip-container">
+                <img src="assets/cuda-logo.png" alt="Cuda Logo" class="h-12 w-auto" />
+                <span class="tooltip-text">CUDA</span>
+            </div>
+            <!-- Matlab Logo -->
+            <div class="tooltip-container">
+                <img src="assets/Matlab_Logo.png" alt="Matlab Logo" class="h-12 w-auto" />
+                <span class="tooltip-text">MATLAB</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Abstract Section -->
+    <div class="flex-1 mt-4">
+        <p class="text-gray-400 text-sm"><strong>Abstract</strong></p>
+
+        <div id="abstract" class="mb-4">
+            <p id="abstract-text" class="text-sm text-gray-400">
+                This study adapts the Super-Resolution via Repeated Refinement (SR3) conditional diffusion model for ECG noise removal. We aimed to develop a single model capable of eliminating electrode motion (EM), muscle artifacts (MA), and composite noise, which are particularly challenging to remove at low signal-to-noise ratios (SNRs) without data-driven methods.
+                We employed Gram Angular Fields for lossless embedding of 1D signals into the image domain. The model’s performance was compared against various filters, including an LMS adaptive filter, FIR low pass filter (LPF), moving average, and a hybrid filter (LPF with LMS), depending on the noise type. 
+                Initially, the model was trained on MIT-BIH Arrhythmia Database (ARDB) data with added noise from the MIT-BIH Noise Stress Test Database. We further assessed the model’s performance on the MIT-BIH Atrial Fibrillation Database (AF) to evaluate its generalization ability.
+                Our model effectively tackled EM, MA, and composite noise across SNRs ranging from 0 to 15 decibels (dB). It outperformed baseline models in handling single noise types (EM, MA) at low SNRs (0 and 5 dB). While excelling in removing composite noise on ARDB across all SNRs, its effectiveness diminished for single noise types at high SNRs. Retraining our model on atrial fibrillation data significantly improved its ability to denoise these types of signals.
+                Our methodology presents an innovative yet computationally demanding approach to ECG noise removal, excelling in low SNR and multi-noise settings.
+            </p>
+        </div>
+
+        <!-- <button id="toggle-button" class="text-blue-500 hover:underline focus:outline-none mt-2">
+            Read More
+        </button> -->
+    </div>
+
+    <!-- Results Section -->
+    <div class="flex-1 mt-4">
+        <p class="text-gray-400 text-sm"><strong>Results</strong></p>
+
+        <!-- Image Gallery with Hover Descriptions -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+            <!-- Image 1 -->
+            <div class="relative group">
+                <img src="assets/visual_ardb_comp.png" alt="Watch Display" class="object-cover rounded-lg shadow-md transition duration-300 transform group-hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 text-white flex items-center justify-center text-center p-2 transition-opacity duration-300">
+                    <p class="text-sm">Removal of composite noise by our model.</p>
+                </div>
+            </div>
+
+            <!-- Image 1 -->
+            <div class="relative group">
+                <img src="assets/results_ardb_comp_bars.png" alt="Watch Display" class="object-cover rounded-lg shadow-md transition duration-300 transform group-hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 text-white flex items-center justify-center text-center p-2 transition-opacity duration-300">
+                    <p class="text-sm">The results show that our model(s) outperform traditional methods, such as least-mean square filter found in Matlab.</p>
+                </div>
+            </div>
+
+            <!-- Image 2 -->
+            <div class="relative group">
+                <img src="assets/visual_ardb_em.png" alt="Reconstructions" class="object-cover rounded-lg shadow-md transition duration-300 transform group-hover:scale-105">
+                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 text-white flex items-center justify-center text-center p-2 transition-opacity duration-300">
+                    <p class="text-sm">The same model was also able to remove a single noise type.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Links to GitHub and Report -->
+        <div class="mt-6 flex justify-center space-x-4">
+            <a href="https://github.com/piedeboer96/ECG-Signal-Denoising" target="_blank" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300 text-center">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="assets/Thesis_Pie_de_Boer.pdf" download class="bg-gray-600 text-white py-2 px-4 rounded hover:bg-gray-700 transition duration-300 text-center">
+                <i class="fas fa-download"></i> Download Report
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    </div>
+</div>
+
+<style>
+    /* Custom styles for the projects section */
+    .projects {
+        background-color: #1f2937; /* Dark background color */
+        padding: 20px;
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    }
+
+    .tech-stack {
+        margin-top: 20px; /* Space above the Tech Stack header */
+        font-weight: bold; /* Bold text */
+    }
+
+    /* Media queries for responsive design */
+    @media (max-width: 768px) {
+        .flex {
+            flex-direction: column; /* Stack items vertically on small screens */
+        }
+    }   
+
+/* Tooltip container */
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text (hidden by default) */
+.tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark background */
+    color: #fff;
+    font-size: 0.75rem; /* Smaller font size */
+    padding: 6px 10px; /* Smaller padding */
+    border-radius: 6px;
+    bottom: 110%; /* Adjusted for a little more space */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+    z-index: 1;
+}
+
+/* Show tooltip text when hovering */
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+
+</style>
+
+    </main>
+
+    <footer class="bg-gray-800 py-4 text-center">
+        <p class="text-gray-500">© 2024 Pie de Boer. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

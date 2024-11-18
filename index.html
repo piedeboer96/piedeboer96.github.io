@@ -15,7 +15,9 @@
     <nav class="bg-gray-800">
         <div class="container mx-auto py-4">
             <a href="index.html" class="mx-5 text-white font-semibold hover:text-red-500 transition duration-300">Home</a>
+            <a href="research.html" class="mx-5 text-white font-semibold hover:text-red-500 transition duration-300">Research</a>
             <a href="projects.html" class="mx-5 text-white font-semibold hover:text-red-500 transition duration-300">Projects</a>
+            <a href="flappy.html" class="mx-5 text-white font-semibold hover:text-red-500 transition duration-300">Secret</a>
         </div>
     </nav>
 
@@ -24,23 +26,32 @@
             <img src="assets/headshot-pie.png" alt="Pie de Boer" class="rounded-full w-36 h-36 object-cover mb-5 shadow-lg">
             <h2 class="mb-2 text-4xl font-bold">Pie de Boer</h2>
             <p class="text-lg font-light text-gray-400">Software Developer, Tech Nerd</p>
-            <p class="text-md text-gray-500">Making computers do cool things! 🦾</p>
+            <p class="text-md text-gray-500">I like computers... 🤓</p>
         </div>
 
+        <!-- Snake Game Section -->
+        <section class="mb-10">
+            <h2 class="text-white text-2xl font-semibold mb-4">Snake Game 🎮</h2>
+            <p class="text-gray-400 mb-4">Play a fun JavaScript Snake game... It even got a leaderboard in MongoDB!</p>
+            <canvas id="snake-game" width="400" height="400" class="border border-gray-700"></canvas>
+        </section>
+
+        <!-- Other sections (Intro, CV, Contact) -->
         <section class="mb-10">
             <h2 class="text-white text-2xl font-semibold mb-4">Intro 👾</h2>
             <p class="max-w-2xl leading-6 text-gray-400 mb-5">
-                Hi 👋 Glad you are here! 
-                I am Pie and I have a BSc in Data Science and Artificial Intelligence. I am passionate about artificial intelligence and software engineering. I am strong at doing research and delivering concise reports. 
-                In addition to that, I am an enthousiastic person strong at persuading people about research or products.
-                I love to build stuff! Wheter it is coding game agents or building full stack applications. 
-                Here you can check my <a href="projects.html" class="text-blue-500 underline">projects</a>. Reports are included, in case you like to learn how to build a golf agent or adapt generative AI to denoise ECG signals!
+                Hi, I'm Pie! 👋 I hold a BSc in Data Science and Artificial Intelligence and have experience as working student at Rabobank.
+                As a kid I liked to build my own computers and hack gaming consoles, with my favourite being the Sony PSP. 
+                Naturally, this lead to me to build a passion for computer science, AI and software engineering.
+                Given my academic background, i have strong skills in research, reporting and presenting.
+                I like to build applications or play around with source code of old video games, e.g. the reverse engineered Grand Theft Auto 3. 
+                Feel free to explore my <a href="research.html" class="text-blue-500 underline">research</a> or check out my <a href="projects.html" class="text-blue-500 underline">projects</a>.
             </p>
         </section>
 
         <section class="mb-10">
             <h2 class="text-white text-2xl font-semibold mb-4">Curriculum Vitae 📝</h2>
-            <p class="text-gray-400 mb-5">Learn more about me here!</p>
+            <p class="text-gray-400 mb-5">Here you go... 👇</p>
             <a href="assets/CV_Pie_de_Boer_October_2024.pdf" download class="bg-blue-600 text-white py-2 px-4 rounded font-semibold inline-flex items-center space-x-2 hover:bg-blue-700 transition duration-300">
                 <i class="fas fa-download"></i>
                 <span>Download CV</span>
@@ -49,7 +60,7 @@
 
         <section>
             <h2 class="text-white text-2xl font-semibold mb-4">Contact 📨</h2>
-            <p class="text-gray-400 mb-5">Let's get in touch! I love to chat in English, German, or Dutch. Connect with me on LinkedIn, GitHub, or call me—whichever you prefer!</p>
+            <p class="text-gray-400 mb-5">Let's get in touch! I like to chat in English, German, or Dutch. Connect with me on LinkedIn, GitHub, or call me—whichever you prefer!</p>
             
             <div class="flex justify-center gap-5 mb-10">
                 <a href="https://github.com/piedeboer96" target="_blank" title="GitHub" class="text-white text-3xl hover:text-red-500 transition duration-300"><i class="fab fa-github"></i></a>
@@ -63,6 +74,143 @@
     <footer class="bg-gray-800 py-4 text-center">
         <p class="text-gray-500">© 2024 Pie de Boer. All rights reserved.</p>
     </footer>
+
+    <!-- Snake Game JavaScript -->
+    <script>
+        window.addEventListener('keydown', function(e) {
+            if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].indexOf(e.key) > -1) {
+                e.preventDefault(); // Prevent the default action (scrolling)
+            }
+        });
+    
+        const canvas = document.getElementById('snake-game');
+        const ctx = canvas.getContext('2d');
+        const scale = 20;
+        const rows = canvas.height / scale;
+        const columns = canvas.width / scale;
+    
+        let snake;
+        let food;
+        let score;
+        let gameOver = false;
+    
+        (function setup() {
+            snake = new Snake();
+            food = new Food();
+            score = 0;
+            window.addEventListener('keydown', e => {
+                const direction = e.key.replace('Arrow', '');
+                if (!gameOver) snake.changeDirection(direction);
+            });
+            window.setInterval(gameLoop, 100);
+        })();
+    
+        function gameLoop() {
+            if (gameOver) {
+                displayGameOver();
+                return;
+            }
+    
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            snake.move();
+    
+            // Check for self-collision after moving, but only if it hasn't just eaten
+            if (snake.eat(food)) {
+                food = new Food();
+                score++;
+            } else if (snake.collidesWithItself()) {
+                gameOver = true;
+                return;
+            }
+    
+            snake.draw();
+            food.draw();
+            ctx.fillStyle = 'white';
+            ctx.font = '20px Arial';
+            ctx.fillText('Score: ' + score, 10, canvas.height - 10);
+        }
+    
+        function Snake() {
+            this.body = [{ x: 5, y: 5 }];
+            this.direction = 'right';
+            this.changeDirection = function (dir) {
+                if (dir === 'Up' && this.direction !== 'down') this.direction = 'up';
+                if (dir === 'Down' && this.direction !== 'up') this.direction = 'down';
+                if (dir === 'Left' && this.direction !== 'right') this.direction = 'left';
+                if (dir === 'Right' && this.direction !== 'left') this.direction = 'right';
+            };
+            this.move = function () {
+                const head = { ...this.body[0] };
+    
+                if (this.direction === 'up') head.y -= 1;
+                if (this.direction === 'down') head.y += 1;
+                if (this.direction === 'left') head.x -= 1;
+                if (this.direction === 'right') head.x += 1;
+    
+                // Wrap the snake around the canvas borders
+                if (head.x < 0) head.x = columns - 1;  // Wrap to the right if going left past the left edge
+                if (head.x >= columns) head.x = 0;     // Wrap to the left if going right past the right edge
+                if (head.y < 0) head.y = rows - 1;     // Wrap to the bottom if going up past the top edge
+                if (head.y >= rows) head.y = 0;        // Wrap to the top if going down past the bottom edge
+    
+                this.body.unshift(head);  // Add new head to the front of the body
+    
+                // Only remove the last segment if the snake has not eaten food
+                if (!this.eatenFood) {
+                    this.body.pop(); // Remove the last body segment (move the snake forward)
+                }
+    
+                this.eatenFood = false;  // Reset eatenFood flag after moving
+            };
+            this.eat = function (food) {
+                const head = this.body[0];
+                if (head.x === food.x && head.y === food.y) {
+                    this.body.push({ x: head.x, y: head.y }); // Grow the snake
+                    this.eatenFood = true; // Mark that the snake has eaten food
+                    return true;
+                }
+                return false;
+            };
+            this.draw = function () {
+                ctx.fillStyle = 'green';
+                this.body.forEach(part => {
+                    ctx.fillRect(part.x * scale, part.y * scale, scale, scale);
+                });
+            };
+    
+            // Check if the snake collides with itself
+            this.collidesWithItself = function() {
+                const head = this.body[0];
+                // Check if the head collides with any part of the body (except itself)
+                for (let i = 1; i < this.body.length; i++) {
+                    if (this.body[i].x === head.x && this.body[i].y === head.y) {
+                        return true;
+                    }
+                }
+                return false;
+            };
+        }
+    
+        function Food() {
+            this.x = Math.floor(Math.random() * columns);
+            this.y = Math.floor(Math.random() * rows);
+            this.draw = function () {
+                ctx.fillStyle = 'red';
+                ctx.fillRect(this.x * scale, this.y * scale, scale, scale);
+            };
+        }
+    
+        // Display the Game Over screen
+        function displayGameOver() {
+            ctx.fillStyle = 'white';
+            ctx.font = '30px Arial';
+            ctx.fillText('Game Over!', canvas.width / 2 - 90, canvas.height / 2);
+            ctx.font = '20px Arial';
+            ctx.fillText('Score: ' + score, canvas.width / 2 - 40, canvas.height / 2 + 30);
+        }
+    </script>
+    
+
 </body>
 
 </html>
