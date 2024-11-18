@@ -29,12 +29,35 @@
             <p class="text-md text-gray-500">I like computers... 🤓</p>
         </div>
 
-        <!-- Snake Game Section -->
-        <section class="mb-10">
-            <h2 class="text-white text-2xl font-semibold mb-4">Snake Game 🎮</h2>
-            <p class="text-gray-400 mb-4">Play a fun JavaScript Snake game... It even got a leaderboard in MongoDB!</p>
+
+       <!-- Snake Game Section -->
+       <section class="mb-10 flex items-start space-x-8">
+        <!-- Game Container -->
+        <div class="game-container flex flex-col">
+            <h2 class="text-white text-2xl font-semibold mb-4">Snake 🐍</h2>
+            <p class="text-gray-400 mb-4">Play a fun JavaScript Snake game...</p>
             <canvas id="snake-game" width="400" height="400" class="border border-gray-700"></canvas>
-        </section>
+        </div>
+
+        <!-- Leaderboard Section -->
+        <!-- <div id="leaderboard" class="bg-gray-800 p-6 rounded-lg shadow-lg w-80 max-w-xs">
+            <h2 class="text-white text-2xl font-semibold mb-4 text-center">Leaderboard 🥂</h2>
+            <ul class="text-gray-400">
+                <!-- Sample Leaderboard Entries -->
+                <!-- <li class="flex justify-between p-3 mb-3 bg-gray-700 rounded-md hover:bg-gray-600 transition-colors"> -->
+                    <!-- <span>1</span> Mario <span>1000</span> -->
+                <!-- </li> -->
+                <!-- <li class="flex justify-between p-3 mb-3 bg-gray-700 rounded-md hover:bg-gray-600 transition-colors"> -->
+                    <!-- <span>2</span> Luigi <span>950</span> -->
+                <!-- </li> -->
+                <!-- <li class="flex justify-between p-3 mb-3 bg-gray-700 rounded-md hover:bg-gray-600 transition-colors"> -->
+                    <!-- <span>3</span> Pikachu <span>900</span> -->
+                <!-- </li> -->
+            <!-- </ul> -->
+        <!-- </div> --> 
+    </section>
+
+     
 
         <!-- Other sections (Intro, CV, Contact) -->
         <section class="mb-10">
@@ -77,59 +100,55 @@
 
     <!-- Snake Game JavaScript -->
     <script>
-        window.addEventListener('keydown', function(e) {
-            if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].indexOf(e.key) > -1) {
-                e.preventDefault(); // Prevent the default action (scrolling)
-            }
-        });
-    
+        // Snake Game JavaScript
+
+        window.addEventListener('keydown', handleKeyDown);
+
         const canvas = document.getElementById('snake-game');
         const ctx = canvas.getContext('2d');
         const scale = 20;
         const rows = canvas.height / scale;
         const columns = canvas.width / scale;
-    
+
         let snake;
         let food;
         let score;
         let gameOver = false;
-    
+        let gameInterval;
+
         (function setup() {
             snake = new Snake();
             food = new Food();
             score = 0;
-            window.addEventListener('keydown', e => {
-                const direction = e.key.replace('Arrow', '');
-                if (!gameOver) snake.changeDirection(direction);
-            });
-            window.setInterval(gameLoop, 100);
+            gameInterval = window.setInterval(gameLoop, 100);  // Start game loop
         })();
-    
+
         function gameLoop() {
             if (gameOver) {
+                clearInterval(gameInterval);  // Stop the game loop when game is over
                 displayGameOver();
                 return;
             }
-    
+
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             snake.move();
-    
+
             // Check for self-collision after moving, but only if it hasn't just eaten
             if (snake.eat(food)) {
                 food = new Food();
                 score++;
             } else if (snake.collidesWithItself()) {
-                gameOver = true;
+                gameOver = true; // Set gameOver flag to true
                 return;
             }
-    
+
             snake.draw();
             food.draw();
             ctx.fillStyle = 'white';
             ctx.font = '20px Arial';
             ctx.fillText('Score: ' + score, 10, canvas.height - 10);
         }
-    
+
         function Snake() {
             this.body = [{ x: 5, y: 5 }];
             this.direction = 'right';
@@ -141,25 +160,25 @@
             };
             this.move = function () {
                 const head = { ...this.body[0] };
-    
+
                 if (this.direction === 'up') head.y -= 1;
                 if (this.direction === 'down') head.y += 1;
                 if (this.direction === 'left') head.x -= 1;
                 if (this.direction === 'right') head.x += 1;
-    
+
                 // Wrap the snake around the canvas borders
                 if (head.x < 0) head.x = columns - 1;  // Wrap to the right if going left past the left edge
                 if (head.x >= columns) head.x = 0;     // Wrap to the left if going right past the right edge
                 if (head.y < 0) head.y = rows - 1;     // Wrap to the bottom if going up past the top edge
                 if (head.y >= rows) head.y = 0;        // Wrap to the top if going down past the bottom edge
-    
+
                 this.body.unshift(head);  // Add new head to the front of the body
-    
+
                 // Only remove the last segment if the snake has not eaten food
                 if (!this.eatenFood) {
                     this.body.pop(); // Remove the last body segment (move the snake forward)
                 }
-    
+
                 this.eatenFood = false;  // Reset eatenFood flag after moving
             };
             this.eat = function (food) {
@@ -177,7 +196,7 @@
                     ctx.fillRect(part.x * scale, part.y * scale, scale, scale);
                 });
             };
-    
+
             // Check if the snake collides with itself
             this.collidesWithItself = function() {
                 const head = this.body[0];
@@ -190,7 +209,7 @@
                 return false;
             };
         }
-    
+
         function Food() {
             this.x = Math.floor(Math.random() * columns);
             this.y = Math.floor(Math.random() * rows);
@@ -199,16 +218,164 @@
                 ctx.fillRect(this.x * scale, this.y * scale, scale, scale);
             };
         }
-    
-        // Display the Game Over screen
+
+        // Modify the displayGameOver function to submit the score
         function displayGameOver() {
             ctx.fillStyle = 'white';
             ctx.font = '30px Arial';
             ctx.fillText('Game Over!', canvas.width / 2 - 90, canvas.height / 2);
             ctx.font = '20px Arial';
             ctx.fillText('Score: ' + score, canvas.width / 2 - 40, canvas.height / 2 + 30);
+
+            // Ask for player name (for leaderboard submission)
+            const playerName = prompt("Enter your name for the leaderboard:");
+
+            // If no name is provided, set a default one
+            if (!playerName) {
+                alert("Name is required for leaderboard submission!");
+                return;  // If the user doesn't provide a name, do not proceed.
+            }
+
+            // Submit score to backend
+            submitScore(playerName, score);
+
+            // Display leaderboard immediately after submission
+            setTimeout(fetchLeaderboard, 2000); // Wait 2 seconds before fetching leaderboard
         }
+
+        // Function to submit score to backend
+        function submitScore(playerName, score) {
+            fetch('http://localhost:3000/submit-score', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ playerName, score }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.message);
+            })
+            .catch(error => {
+                console.error('Error submitting score:', error);
+            });
+        }
+
+        // Function to fetch and display leaderboard
+        function fetchLeaderboard() {
+                fetch('http://localhost:3000/leaderboard')
+                    .then(response => response.json())
+                    .then(leaderboard => {
+                        let leaderboardHtml = '<h2>Leaderboard</h2><ul>';
+                        leaderboard.forEach((entry, index) => {
+                            leaderboardHtml += `
+                                <li>
+                                    <span>${index + 1}. ${entry.playerName}</span>
+                                    <span>${entry.score} points</span>
+                                </li>
+                            `;
+                        });
+                        leaderboardHtml += '</ul>';
+                        document.getElementById('leaderboard').innerHTML = leaderboardHtml;
+                    })
+                    .catch(error => {
+                        console.error('Error fetching leaderboard:', error);
+                    });
+            }
+
+        // Keydown handler to change snake direction
+        function handleKeyDown(e) {
+            if (gameOver) return;  // Disable key events after game over
+            
+            if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].indexOf(e.key) > -1) {
+                e.preventDefault(); // Prevent the default action (scrolling)
+            }
+
+            const direction = e.key.replace('Arrow', '');
+            snake.changeDirection(direction);
+        }
+
     </script>
+    
+    <style>
+        
+        /* Leaderboard container */
+        #leaderboard {
+            background-color: #2d3748; /* Darker background */
+            padding: 24px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+    
+        /* Leaderboard Title */
+        #leaderboard h2 {
+            text-align: center;
+            color: #e2e8f0; /* Light gray for the title */
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+    
+        /* List Styles */
+        #leaderboard ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+    
+        /* Leaderboard List Items */
+        #leaderboard ul li {
+            padding: 12px 16px;
+            background-color: #4a5568; /* Slightly lighter dark gray */
+            margin: 8px 0;
+            border-radius: 8px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+        }
+    
+        /* Hover effect for leaderboard items */
+        #leaderboard ul li:hover {
+            background-color: #718096; /* Lighter gray on hover */
+            transform: translateY(-2px); /* Subtle lift effect */
+        }
+    
+        /* Span (for score) inside leaderboard list item */
+        #leaderboard ul li span {
+            font-weight: 700;
+            color: #edf2f7; /* Slightly lighter text for the score */
+        }
+    
+        /* Leaderboard item rank */
+        #leaderboard ul li .rank {
+            font-weight: 700;
+            color: #f7fafc; /* Light color for rank */
+        }
+    
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 600px) {
+            #leaderboard {
+                padding: 16px;
+                max-width: 100%;
+            }
+    
+            #leaderboard h2 {
+                font-size: 1.5rem;
+            }
+    
+            #leaderboard ul li {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    
     
 
 </body>

@@ -1,0 +1,6 @@
+snake-game-backend/.env
+node_modules/
+.env
+snake-game-backend/node_modules
+
+snake-game-backend
