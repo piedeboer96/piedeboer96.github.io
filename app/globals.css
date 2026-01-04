@@ -47,73 +47,73 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* Japandi Design System - Wabi-Sabi Philosophy */
+  --radius: 0.5rem; /* Softer, more organic radius */
+
+  /* Primary Neutrals - Light, Warm Base */
+  --soft-ivory: #f3f0e8;
+  --warm-gray: #e6e4e0;
+  --warm-sand: #dfcaba;
+
+  /* Accent Colors - Natural, Earthy */
+  --sage-green: #b9b99d;
+  --warm-gold: #dcb482;
+  --terracotta: #c09e85;
+
+  /* Deep Tones - Grounding Elements */
+  --warm-gray-brown: #8f837a;
+  --deep-sage: #606c5a;
+  --charcoal: #5e5e5e;
+
+  /* Design Token Mappings */
+  --background: #f3f0e8;
+  --foreground: #5e5e5e;
+
+  --card: #e6e4e0;
+  --card-foreground: #5e5e5e;
+  --card-secondary: #dfcaba;
+
+  --popover: #e6e4e0;
+  --popover-foreground: #5e5e5e;
+
+  --primary: #b9b99d;
+  --primary-foreground: #5e5e5e;
+  --primary-hover: #a8a88a;
+
+  --secondary: #dcb482;
+  --secondary-foreground: #5e5e5e;
+  --secondary-hover: #d4a571;
+
+  --muted: #e6e4e0;
+  --muted-foreground: #8f837a;
+
+  --accent: #c09e85;
+  --accent-foreground: #5e5e5e;
+
+  --destructive: #c09e85;
+  --border: #8f837a;
+  --input: #e6e4e0;
+  --ring: #b9b99d;
+
+  /* Text Colors */
+  --heading-primary: #5e5e5e;
+  --heading-secondary: #606c5a;
+  --body-text: #8f837a;
+  --link-color: #606c5a;
+  --link-hover: #b9b99d;
+
+  /* Sidebar (if needed) */
+  --sidebar: #e6e4e0;
+  --sidebar-foreground: #5e5e5e;
+  --sidebar-primary: #b9b99d;
+  --sidebar-primary-foreground: #5e5e5e;
+  --sidebar-accent: #dfcaba;
+  --sidebar-accent-foreground: #5e5e5e;
+  --sidebar-border: #8f837a;
+  --sidebar-ring: #b9b99d;
 }
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
-}
+/* Japandi uses a single light mode - no dark mode needed */
 
 @layer base {
   * {
@@ -121,6 +121,245 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Subtle paper texture for wabi-sabi aesthetic */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 50;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-color: rgba(143, 131, 122, 0.02);
+  }
+}
+
+@layer utilities {
+  /* Japandi gradient text - subtle sage and gold */
+  .gradient-text {
+    @apply bg-gradient-to-r from-[#606c5a] via-[#b9b99d] to-[#dcb482] bg-clip-text text-transparent;
+    animation: gradient-shift 12s ease infinite;
+    background-size: 200% 200%;
+  }
+
+  /* Soft organic mesh gradient background */
+  .mesh-gradient {
+    background:
+      radial-gradient(at 27% 37%, rgba(185, 185, 157, 0.08) 0px, transparent 50%),
+      radial-gradient(at 97% 21%, rgba(220, 180, 130, 0.06) 0px, transparent 50%),
+      radial-gradient(at 52% 99%, rgba(192, 158, 133, 0.05) 0px, transparent 50%),
+      radial-gradient(at 10% 29%, rgba(143, 131, 122, 0.04) 0px, transparent 50%),
+      radial-gradient(at 97% 96%, rgba(185, 185, 157, 0.06) 0px, transparent 50%);
+    animation: mesh-move 30s ease-in-out infinite;
+  }
+
+  /* Subtle natural border accent */
+  .natural-border {
+    position: relative;
+    border: 1px solid var(--warm-gray-brown);
+    transition: all 0.3s ease;
+  }
+
+  .natural-border:hover {
+    border-color: var(--sage-green);
+    box-shadow: 0 0 0 1px var(--sage-green);
+  }
+
+  /* Gentle card lift - minimalist movement */
+  .card-lift {
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
+  }
+
+  .card-lift:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 8px 24px rgba(143, 131, 122, 0.12),
+      0 2px 8px rgba(143, 131, 122, 0.08);
+  }
+
+  /* Soft tech badge - organic feel */
+  .tech-badge {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: rgba(185, 185, 157, 0.08);
+    border-color: rgba(143, 131, 122, 0.3);
+  }
+
+  .tech-badge::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(185, 185, 157, 0.15) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+  }
+
+  .tech-badge:hover::before {
+    width: 200%;
+    height: 200%;
+  }
+
+  .tech-badge:hover {
+    border-color: var(--sage-green);
+    background: rgba(185, 185, 157, 0.15);
+    color: var(--deep-sage);
+    box-shadow: 0 4px 12px rgba(185, 185, 157, 0.2);
+  }
+
+  /* Soft glass card - light and airy */
+  .glass-card {
+    background: rgba(230, 228, 224, 0.6);
+    backdrop-filter: blur(12px) saturate(100%);
+    -webkit-backdrop-filter: blur(12px) saturate(100%);
+    border: 1px solid rgba(143, 131, 122, 0.2);
+  }
+
+  /* Subtle animated border */
+  .animated-border {
+    position: relative;
+    background: linear-gradient(90deg,
+      rgba(185, 185, 157, 0.15),
+      rgba(220, 180, 130, 0.15),
+      rgba(185, 185, 157, 0.15)
+    );
+    background-size: 200% 100%;
+    animation: border-flow 4s linear infinite;
+  }
+
+  /* Gentle scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+                transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Natural shadow - soft and organic */
+  .shadow-natural {
+    box-shadow:
+      0 4px 16px rgba(143, 131, 122, 0.1),
+      0 2px 4px rgba(143, 131, 122, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+
+  /* Gentle shimmer */
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+      transparent,
+      rgba(220, 180, 130, 0.1),
+      transparent
+    );
+    animation: shimmer 3s infinite;
+  }
+
+  /* Japandi button base */
+  .btn-japandi {
+    @apply bg-[#b9b99d] text-[#5e5e5e] hover:bg-[#a8a88a] transition-all duration-300;
+    box-shadow: 0 2px 8px rgba(185, 185, 157, 0.2);
+  }
+
+  .btn-japandi:hover {
+    box-shadow: 0 4px 12px rgba(185, 185, 157, 0.3);
+    transform: translateY(-1px);
+  }
+
+  /* Japandi secondary button */
+  .btn-japandi-secondary {
+    @apply bg-[#dcb482] text-[#5e5e5e] hover:bg-[#d4a571] transition-all duration-300;
+    box-shadow: 0 2px 8px rgba(220, 180, 130, 0.2);
+  }
+
+  .btn-japandi-secondary:hover {
+    box-shadow: 0 4px 12px rgba(220, 180, 130, 0.3);
+    transform: translateY(-1px);
+  }
+
+  /* Zen circle accent */
+  .zen-circle {
+    border-radius: 50%;
+    border: 2px solid var(--sage-green);
+    box-shadow: 0 0 0 4px rgba(185, 185, 157, 0.1);
+  }
+}
+
+/* Keyframe animations */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes mesh-move {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes border-flow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(185, 185, 157, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(185, 185, 157, 0.35);
   }
 }
 

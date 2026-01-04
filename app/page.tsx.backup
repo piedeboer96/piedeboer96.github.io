@@ -1,0 +1,612 @@
+'use client';
+
+import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
+import { ScrollProgress } from "@/components/ScrollProgress";
+import { MagneticButton } from "@/components/MagneticButton";
+import { ParticleBackground } from "@/components/ParticleBackground";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef } from "react";
+import {
+  Mail,
+  Phone,
+  Linkedin,
+  Github,
+  MapPin,
+  Calendar,
+  User,
+  Globe,
+  Zap,
+  BookOpen,
+  Sparkles
+} from "lucide-react";
+
+export default function Portfolio() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll('.reveal');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div className="relative min-h-screen overflow-hidden bg-black">
+      {/* Scroll Progress Indicator */}
+      <ScrollProgress />
+
+      {/* Animated Mesh Gradient Background */}
+      <div className="fixed inset-0 mesh-gradient" />
+
+      {/* Particle Background */}
+      <ParticleBackground />
+
+      <div ref={containerRef} className="relative container mx-auto px-4 py-14 max-w-5xl min-h-screen z-10">
+
+        {/* ================= HERO ================= */}
+        <header className="mb-20 reveal">
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+            {/* Profile Image */}
+            <motion.div
+              className="flex-shrink-0"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden shadow-premium ring-2 ring-purple-500/50 will-change-transform group">
+                {/* Animated glow border */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-fuchsia-500 to-blue-500 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500" />
+                <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-black/50">
+                  <Image
+                    src="/profile.jpg"
+                    alt="Pie de Boer"
+                    fill
+                    priority
+                    quality={90}
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 768px) 192px, 224px"
+                  />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Text Content */}
+            <motion.div
+              className="flex-1 text-center md:text-left md:pt-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              {/* Name with greeting */}
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text leading-tight">
+                Hi, I'm Pie de Boer
+              </h1>
+
+              {/* Catchy Tagline */}
+              <p className="text-xl md:text-2xl font-medium text-slate-200 mb-8 leading-relaxed">
+                I build AI systems that make{" "}
+                <span className="relative inline-block">
+                  <span className="relative z-10 font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-fuchsia-400">
+                    finance
+                  </span>
+                  <span className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-purple-500/30 to-fuchsia-500/30 blur-sm" />
+                </span>{" "}
+                simple
+              </p>
+
+              {/* CTA Button */}
+              <div className="mb-8">
+                <MagneticButton>
+                  <Button
+                    size="lg"
+                    asChild
+                    className="relative overflow-hidden bg-gradient-to-r from-purple-600 via-fuchsia-600 to-blue-600 hover:from-purple-500 hover:via-fuchsia-500 hover:to-blue-500 text-white font-semibold shadow-premium hover:shadow-[0_0_40px_rgba(168,85,247,0.6)] transition-all duration-300 border-0 group"
+                  >
+                    <a href="mailto:piedeboer96@gmail.com" className="flex items-center gap-2 px-8 py-6">
+                      <Mail className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                      <span className="relative z-10">Let's Connect</span>
+                      <Sparkles className="w-4 h-4 group-hover:scale-125 transition-transform" />
+                    </a>
+                  </Button>
+                </MagneticButton>
+              </div>
+
+              {/* Location */}
+              <div className="flex items-center justify-center md:justify-start gap-2 text-slate-400 mb-6">
+                <MapPin className="w-4 h-4" />
+                <span>Berlin, Germany</span>
+              </div>
+
+              {/* Contact Links */}
+              <div className="flex flex-wrap justify-center md:justify-start gap-3">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  asChild
+                  className="glass-card hover:bg-purple-500/20 hover:border-purple-400/50 transition-all duration-200"
+                >
+                  <a href="tel:+491622342077" className="flex items-center gap-2">
+                    <Phone className="w-4 h-4" />
+                    Mobile
+                  </a>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  asChild
+                  className="glass-card hover:bg-purple-500/20 hover:border-purple-400/50 transition-all duration-200"
+                >
+                  <a
+                    href="https://www.linkedin.com/in/pie-de-boer-6b6663265/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                    LinkedIn
+                  </a>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  asChild
+                  className="glass-card hover:bg-purple-500/20 hover:border-purple-400/50 transition-all duration-200"
+                >
+                  <a
+                    href="https://github.com/piedeboer96"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    <Github className="w-4 h-4" />
+                    GitHub
+                  </a>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  asChild
+                  className="glass-card hover:bg-purple-500/20 hover:border-purple-400/50 transition-all duration-200"
+                >
+                  <a
+                    href="https://www.xing.com/profile/Pie_deBoer"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    <Globe className="w-4 h-4" />
+                    XING
+                  </a>
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        </header>
+
+        {/* ================= ABOUT ================= */}
+        <section id="about" className="mb-20 reveal">
+        <Card className="glass-card shadow-premium card-lift border-slate-600/40">
+          <CardContent className="px-10 py-10">
+            <div className="flex items-center gap-3 mb-6">
+              <User className="w-6 h-6 text-purple-400" />
+              <h2 className="text-2xl font-bold text-white">About Me</h2>
+            </div>
+            <div className="space-y-5">
+              <p className="text-slate-100 leading-relaxed text-lg font-light">
+                I'm a <span className="font-semibold text-white">Machine Learning Engineer</span> at <span className="font-semibold text-white">Quirin Privatbank</span> in Berlin, where I develop customer-facing AI chatbots that help people understand finance, and internal tools that enhance advisor workflows.
+              </p>
+              <p className="text-slate-200 leading-relaxed text-base">
+                I hold a degree in <span className="font-medium text-slate-100">Artificial Intelligence</span> from Maastricht University with a GPA of 8.3/10. I approach problems with curiosity and precision, always focused on building solutions that create real impact.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+        </section>
+
+        {/* ================= EXPERIENCE ================= */}
+        <section id="experience" className="mb-20 reveal">
+          <h2 className="text-3xl font-bold mb-8 text-white flex items-center gap-3">
+            <Zap className="w-8 h-8 text-purple-400" />
+            Experience
+          </h2>
+
+          <div className="space-y-8 relative">
+            {/* Timeline line */}
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 via-fuchsia-500 to-transparent hidden md:block" />
+
+            {/* Current Position - Quirin Privatbank */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+            <Card className="glass-card shadow-premium card-lift border-purple-500/30 relative overflow-hidden">
+              <CardContent className="px-10 py-10">
+                <div className="flex items-start gap-5 mb-4">
+                  {/* Company Logo - Round Glassy Button */}
+                  <div className="relative w-16 h-16 flex-shrink-0 rounded-full overflow-hidden bg-white shadow-xl border border-slate-500/40 flex items-center justify-center p-3">
+                    <div className="relative w-full h-full">
+                      <Image
+                        src="/quirinprivatbank-logo.svg"
+                        alt="Quirin Privatbank logo"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <div>
+                        <h3 className="text-xl font-semibold text-white">Machine Learning Engineer</h3>
+                        <p className="text-slate-200">Quirin Privatbank · Full Time</p>
+                      </div>
+                      <Badge variant="default" className="shrink-0 bg-green-600 hover:bg-green-700">Current</Badge>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-3 text-sm text-slate-400">
+                      <div className="flex items-center gap-1">
+                        <MapPin className="w-3 h-3" />
+                        <span>Berlin</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Calendar className="w-3 h-3" />
+                        <span>Feb 2025 - Present</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="mb-4">
+                  <p className="text-sm font-semibold text-white mb-3">Projects: quirion.ai · Internal AI Platform</p>
+                  <ul className="space-y-2.5 text-slate-200 text-sm">
+                    <li className="flex gap-3 leading-relaxed">
+                      <span className="text-purple-400 font-bold flex-shrink-0">•</span>
+                      <span>Feature Development for quirion.ai - optimizing financial tools for our chatbot, backend optimization and frontend updates.</span>
+                    </li>
+                    <li className="flex gap-3 leading-relaxed">
+                      <span className="text-purple-400 font-bold flex-shrink-0">•</span>
+                      <span>Development of Internal AI Platform for Financial Advisors - improving workflows enabling better customer advice.</span>
+                    </li>
+                    <li className="flex gap-3 leading-relaxed">
+                      <span className="text-purple-400 font-bold flex-shrink-0">•</span>
+                      <span>Setup of extensive monitoring through Langfuse and Grafana, gathering actionable insight into performance and behavior of our agent.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Links */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <Button variant="outline" size="sm" asChild className="hover:bg-slate-700/50 border-slate-500/50">
+                    <a href="https://www.quirion.ai" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                      <Zap className="w-3 h-3" />
+                      Chatbot
+                    </a>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild className="hover:bg-slate-700/50 border-slate-500/50">
+                    <a href="https://www.quirinprivatbank.de" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                      <Globe className="w-3 h-3" />
+                      Website
+                    </a>
+                  </Button>
+                </div>
+
+                {/* Tech Stack */}
+                <div className="space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">Frontend</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="tech-badge border-slate-500/50 text-slate-200">TypeScript</Badge>
+                      <Badge variant="outline" className="tech-badge border-slate-500/50 text-slate-200">Next.js</Badge>
+                      <Badge variant="outline" className="tech-badge border-slate-500/50 text-slate-200">React</Badge>
+                      <Badge variant="outline" className="tech-badge border-slate-500/50 text-slate-200">AI-SDK</Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">Backend</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="tech-badge border-slate-500/50 text-slate-200">Python</Badge>
+                      <Badge variant="outline" className="tech-badge border-slate-500/50 text-slate-200">FastAPI</Badge>
+                      <Badge variant="outline" className="tech-badge border-slate-500/50 text-slate-200">Langgraph</Badge>
+                      <Badge variant="outline" className="tech-badge border-slate-500/50 text-slate-200">Langfuse</Badge>
+                      <Badge variant="outline" className="tech-badge border-slate-500/50 text-slate-200">Postgres</Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">Infrastructure</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="tech-badge border-slate-500/50 text-slate-200">Azure</Badge>
+                      <Badge variant="outline" className="tech-badge border-slate-500/50 text-slate-200">Docker</Badge>
+                      <Badge variant="outline" className="tech-badge border-slate-500/50 text-slate-200">Kubernetes</Badge>
+                      <Badge variant="outline" className="tech-badge border-slate-500/50 text-slate-200">Terraform</Badge>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            </motion.div>
+
+            {/* Internship - Rabobank */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+            <Card className="glass-card shadow-premium card-lift border-purple-500/30 relative overflow-hidden">
+              <CardContent className="px-10 py-10">
+                <div className="flex items-start gap-5 mb-4">
+                  {/* Company Logo - Round Glassy Button */}
+                  <div className="relative w-16 h-16 flex-shrink-0 rounded-full overflow-hidden bg-white shadow-xl border border-slate-500/40 flex items-center justify-center p-3">
+                    <div className="relative w-full h-full">
+                      <Image
+                        src="/rabobank-logo.svg"
+                        alt="Rabobank logo"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <div>
+                        <h3 className="text-xl font-semibold text-white">Data Scientist</h3>
+                        <p className="text-slate-200">Rabobank • Internship</p>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-3 text-sm text-slate-400">
+                      <div className="flex items-center gap-1">
+                        <MapPin className="w-3 h-3" />
+                        <span>Remote (Netherlands)</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Calendar className="w-3 h-3" />
+                        <span>2024 - 2025</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <p className="text-slate-200 text-sm mb-4 leading-relaxed">
+                  Research and development on quantum-based portfolio optimization methods.
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="outline" className="tech-badge border-slate-500/50 text-slate-200">Python</Badge>
+                  <Badge variant="outline" className="tech-badge border-slate-500/50 text-slate-200">Matlab</Badge>
+                  <Badge variant="outline" className="tech-badge border-slate-500/50 text-slate-200">D-Wave</Badge>
+                </div>
+              </CardContent>
+            </Card>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* ================= EDUCATION ================= */}
+        <section id="education" className="mb-20 reveal">
+          <h2 className="text-3xl font-bold mb-8 text-white flex items-center gap-3">
+            <BookOpen className="w-8 h-8 text-purple-400" />
+            Education
+          </h2>
+
+          <div className="space-y-8">
+            {/* Maastricht University */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+            <Card className="glass-card shadow-premium card-lift border-purple-500/30">
+              <CardContent className="px-10 py-10">
+                <div className="flex items-start gap-5 mb-4">
+                  {/* University Logo - Round Glassy Button */}
+                  <div className="relative w-16 h-16 flex-shrink-0 rounded-full overflow-hidden bg-white shadow-xl border border-slate-500/40 flex items-center justify-center p-3">
+                    <div className="relative w-full h-full">
+                      <Image
+                        src="/university-logo-1.jpg"
+                        alt="Maastricht University logo"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <div>
+                        <h3 className="text-xl font-semibold text-white">Data Science and Artificial Intelligence</h3>
+                        <p className="text-slate-200">Maastricht University</p>
+                      </div>
+                      <Badge variant="secondary" className="shrink-0">GPA: 8.3/10</Badge>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-3 text-sm text-slate-400">
+                      <div className="flex items-center gap-1">
+                        <MapPin className="w-3 h-3" />
+                        <span>Maastricht</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Calendar className="w-3 h-3" />
+                        <span>2021 - 2024</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="text-slate-200 text-sm mb-3 leading-relaxed">
+                  Rewarded as best AI program in 2023. Strong focus on AI fundamentals with bi-yearly team
+                  projects building real-world applications.
+                </p>
+
+                <p className="text-sm text-slate-400 mb-3">
+                  <span className="text-slate-200 font-semibold">Thesis:</span> <a href="https://github.com/piedeboer96/ECG-Signal-Denoising" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300 underline">Conditional Diffusion Models for ECG Signal Denoising</a> (Grade: 8.5/10)
+                </p>
+
+                <div className="space-y-3 mb-4">
+                  <div>
+                    <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">Key Courses</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Software Engineering</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Linear Algebra</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Probability and Statistics</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Data Analysis</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Machine Learning</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Intelligent Systems</Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">Focus Areas</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Machine Learning</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Deep Learning</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Computer Vision</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">NLP</Badge>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  <Button variant="outline" size="sm" asChild className="hover:bg-slate-700/50 border-slate-500/50">
+                    <a href="https://github.com/piedeboer96/ECG-Signal-Denoising" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                      <Github className="w-3 h-3" />
+                      Thesis Repository
+                    </a>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild className="hover:bg-slate-700/50 border-slate-500/50">
+                    <a href="https://www.maastrichtuniversity.nl/education/bachelor/programmes/data-science-and-artificial-intelligence" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                      <Globe className="w-3 h-3" />
+                      Program Website
+                    </a>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Utrecht University */}
+            <Card className="bg-white/8 backdrop-blur-md border-slate-600/60 transition-all duration-300 hover:bg-white/12 hover:shadow-2xl hover:border-slate-500/70">
+              <CardContent className="px-10 py-10">
+                <div className="flex items-start gap-5 mb-4">
+                  {/* University Logo - Round Glassy Button */}
+                  <div className="relative w-16 h-16 flex-shrink-0 rounded-full overflow-hidden bg-white shadow-xl border border-slate-500/40 flex items-center justify-center p-3">
+                    <div className="relative w-full h-full">
+                      <Image
+                        src="/utrechtuniversity-logo.svg"
+                        alt="Utrecht University logo"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="mb-2">
+                      <h3 className="text-xl font-semibold text-white">Chemistry</h3>
+                      <p className="text-slate-200">Utrecht University</p>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-3 text-sm text-slate-400">
+                      <div className="flex items-center gap-1">
+                        <MapPin className="w-3 h-3" />
+                        <span>Utrecht</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Calendar className="w-3 h-3" />
+                        <span>2016</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="text-slate-200 text-sm mb-3 leading-relaxed">
+                  Completed first year 60 ECTS.
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Calculus</Badge>
+                  <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Linear Algebra</Badge>
+                  <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Physics</Badge>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* ================= SKILLS ================= */}
+        <section id="skills" className="mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-700">
+          <h2 className="text-3xl font-bold mb-6 text-white">
+            Skills & Languages
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Technical Skills */}
+            <Card className="bg-white/8 backdrop-blur-md border-slate-600/60 transition-all duration-300 hover:bg-white/12 hover:shadow-2xl hover:border-slate-500/70">
+              <CardContent className="px-10 py-10">
+                <h3 className="text-xl font-bold text-white mb-6">Technical Skills</h3>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-sm font-semibold text-slate-400 mb-2">Languages & Frameworks</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Python</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">TypeScript</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Next.js</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">React</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">FastAPI</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Docker</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Kubernetes</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Postgres</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Terraform</Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-slate-400 mb-2">Tools & Platforms</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Azure</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Git</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Jira</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Confluence</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">D-Wave</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Langgraph</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Langfuse</Badge>
+                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">AI-SDK</Badge>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Languages */}
+            <Card className="bg-white/8 backdrop-blur-md border-slate-600/60 transition-all duration-300 hover:bg-white/12 hover:shadow-2xl hover:border-slate-500/70">
+              <CardContent className="px-10 py-10">
+                <h3 className="text-xl font-bold text-white mb-6">Languages</h3>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Dutch (Native)</Badge>
+                  <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">English (Fluent)</Badge>
+                  <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">German (Fluent)</Badge>
+                  <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">French (Beginner)</Badge>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* ================= FOOTER ================= */}
+        <footer className="text-center pt-8 pb-4">
+          <p className="text-slate-500 text-sm">
+            © {new Date().getFullYear()} Pie de Boer. All rights reserved.
+          </p>
+        </footer>
+      </div>
+    </div>
+  );
+}

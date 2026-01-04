@@ -3,8 +3,9 @@
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 import {
   Mail,
   Phone,
@@ -15,165 +16,232 @@ import {
   User,
   Globe,
   Zap,
-  BookOpen
+  BookOpen,
+  Sparkles
 } from "lucide-react";
-import DarkVeil from "@/components/DarkVeil";
 
 export default function Portfolio() {
-  return (
-    <div className="relative min-h-screen overflow-hidden">
-      {/* Dark Veil Background */}
-      <div className="absolute inset-0 -z-10">
-        <DarkVeil />
-      </div>
+  const containerRef = useRef<HTMLDivElement>(null);
 
-      <div className="container mx-auto px-4 py-14 max-w-5xl min-h-screen">
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll('.reveal');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div className="relative min-h-screen overflow-hidden bg-[#f3f0e8]">
+      {/* Subtle Organic Gradient Background */}
+      <div className="fixed inset-0 mesh-gradient opacity-100" />
+
+      {/* Optional: Remove particle background for cleaner Japandi aesthetic */}
+      {/* <ParticleBackground /> */}
+
+      <div ref={containerRef} className="relative container mx-auto px-6 py-16 max-w-5xl min-h-screen z-10">
 
         {/* ================= HERO ================= */}
-        <header className="text-center mb-16 animate-in fade-in duration-700">
-          {/* Profile Image */}
-          <div className="mb-6 flex justify-center">
-            <div className="relative w-32 h-32 rounded-full overflow-hidden shadow-lg ring-4 ring-slate-200 dark:ring-slate-800 will-change-transform">
-              <Image
-                src="/profile.jpg"
-                alt="Pie de Boer"
-                fill
-                priority
-                quality={90}
-                className="object-cover"
-                sizes="128px"
-              />
-            </div>
-          </div>
-
-          {/* Name */}
-          <h1 className="text-5xl font-bold mb-2 bg-gradient-to-b from-white to-slate-300 bg-clip-text text-transparent drop-shadow-md">
-            Pie de Boer
-          </h1>
-
-          {/* Role */}
-          <p className="text-xl font-semibold text-slate-200 mb-1">
-            Machine Learning Engineer
-          </p>
-
-          {/* Tagline */}
-          <p className="text-sm text-slate-400 mb-6">
-            Enabling financial education and advisory workflows through AI
-          </p>
-
-          {/* Location */}
-          <div className="flex items-center justify-center gap-2 text-slate-500 mb-6">
-            <MapPin className="w-4 h-4" />
-            <span>Berlin, Germany</span>
-          </div>
-
-          {/* Contact Links */}
-          <div className="flex flex-wrap justify-center gap-3">
-            <Button 
-              variant="outline" 
-              size="sm" 
-              asChild
-              className="hover:bg-slate-800 hover:text-white transition-colors duration-200"
+        <header className="mb-20 reveal">
+          <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+            {/* Profile Image */}
+            <motion.div
+              className="flex-shrink-0"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, ease: [0.23, 1, 0.32, 1] }}
             >
-              <a href="mailto:xxx@gmail.com" className="flex items-center gap-2">
-                <Mail className="w-4 h-4" />
-                Email
-              </a>
-            </Button>
-            <Button 
-              variant="outline" 
-              size="sm" 
-              asChild
-              className="hover:bg-slate-800 hover:text-white transition-colors duration-200"
+              <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden shadow-natural zen-circle will-change-transform group">
+                {/* Subtle sage glow on hover */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#b9b99d] to-[#dcb482] opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-700" />
+                <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-[#e6e4e0]">
+                  <Image
+                    src="/profile.jpg"
+                    alt="Pie de Boer"
+                    fill
+                    priority
+                    quality={90}
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    sizes="(max-width: 768px) 192px, 224px"
+                  />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Text Content */}
+            <motion.div
+              className="flex-1 text-center md:text-left md:pt-4"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.3, ease: [0.23, 1, 0.32, 1] }}
             >
-              <a href="tel:+49XX" className="flex items-center gap-2">
-                <Phone className="w-4 h-4" />
-                +49XX
-              </a>
-            </Button>
-            <Button 
-              variant="outline" 
-              size="sm" 
-              asChild
-              className="hover:bg-slate-800 hover:text-white transition-colors duration-200"
-            >
-              <a 
-                href="url-placeholder" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="flex items-center gap-2"
-              >
-                <Linkedin className="w-4 h-4" />
-                LinkedIn
-              </a>
-            </Button>
-            <Button 
-              variant="outline" 
-              size="sm" 
-              asChild
-              className="hover:bg-slate-800 hover:text-white transition-colors duration-200"
-            >
-              <a 
-                href="url-placeholder" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="flex items-center gap-2"
-              >
-                <Github className="w-4 h-4" />
-                GitHub
-              </a>
-            </Button>
+              {/* Name with greeting */}
+              <h1 className="text-5xl md:text-7xl font-light mb-6 gradient-text leading-tight tracking-tight">
+                Hi, I'm Pie de Boer
+              </h1>
+
+              {/* Catchy Tagline */}
+              <p className="text-2xl md:text-3xl font-light text-[#606c5a] mb-12 leading-relaxed">
+                Currently exploring <span className="text-[#b9b99d] font-medium">Next.js</span> and <span className="text-[#b9b99d] font-medium">AI SDK</span> to build modern, AI-powered web applications
+              </p>
+
+              {/* CTA Button */}
+              <div className="mb-10">
+                <Button
+                  size="lg"
+                  asChild
+                  className="relative overflow-hidden btn-japandi font-medium shadow-natural hover:shadow-[0_6px_20px_rgba(185,185,157,0.3)] transition-all duration-300 border-0 group text-base"
+                >
+                  <a href="mailto:piedeboer96@gmail.com" className="flex items-center gap-3 px-8 py-6">
+                    <Mail className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
+                    <span className="relative z-10">Let's Connect</span>
+                  </a>
+                </Button>
+              </div>
+
+              {/* Location */}
+              <div className="flex items-center justify-center md:justify-start gap-2 text-[#8f837a] mb-6">
+                <MapPin className="w-4 h-4" />
+                <span className="font-light">Berlin, Germany</span>
+              </div>
+
+              {/* Contact Links */}
+              <div className="flex flex-wrap justify-center md:justify-start gap-3">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  asChild
+                  className="glass-card natural-border text-[#5e5e5e] hover:bg-[#dfcaba]/40 hover:text-[#606c5a] transition-all duration-300 font-light"
+                >
+                  <a href="tel:+491622342077" className="flex items-center gap-2">
+                    <Phone className="w-4 h-4" />
+                    Mobile
+                  </a>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  asChild
+                  className="glass-card natural-border text-[#5e5e5e] hover:bg-[#dfcaba]/40 hover:text-[#606c5a] transition-all duration-300 font-light"
+                >
+                  <a
+                    href="https://www.linkedin.com/in/pie-de-boer-6b6663265/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                    LinkedIn
+                  </a>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  asChild
+                  className="glass-card natural-border text-[#5e5e5e] hover:bg-[#dfcaba]/40 hover:text-[#606c5a] transition-all duration-300 font-light"
+                >
+                  <a
+                    href="https://github.com/piedeboer96"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    <Github className="w-4 h-4" />
+                    GitHub
+                  </a>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  asChild
+                  className="glass-card natural-border text-[#5e5e5e] hover:bg-[#dfcaba]/40 hover:text-[#606c5a] transition-all duration-300 font-light"
+                >
+                  <a
+                    href="https://www.xing.com/profile/Pie_deBoer"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    <Globe className="w-4 h-4" />
+                    XING
+                  </a>
+                </Button>
+              </div>
+            </motion.div>
           </div>
         </header>
 
         {/* ================= ABOUT ================= */}
-        <Card className="mb-16 bg-white/8 backdrop-blur-md border-slate-600/60 shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 hover:bg-white/10 transition-all">
-          <CardContent className="px-8 py-8">
-            <div className="flex items-center gap-2 mb-4">
-              <User className="w-5 h-5 text-slate-400" />
-              <h2 className="text-xl font-semibold text-white">About</h2>
+        <section id="about" className="mb-24 reveal">
+        <Card className="glass-card shadow-natural card-lift border-[#8f837a]/30 bg-[#e6e4e0]/60">
+          <CardContent className="px-10 py-10">
+            <div className="flex items-center gap-3 mb-6">
+              <User className="w-6 h-6 text-[#606c5a]" />
+              <h2 className="text-2xl font-light text-[#5e5e5e] tracking-wide">About Me</h2>
             </div>
-            <div className="space-y-4">
-              <p className="text-slate-100 leading-relaxed text-base">
-                Machine Learning Engineer at Quirin Privatbank, Berlin. I build customer-facing AI chatbots that help people 
-                understand finance, and internal tools that improve advisor workflows.
+            <div className="space-y-5">
+              <p className="text-[#5e5e5e] leading-relaxed text-lg font-light">
+                <span className="font-medium">Machine Learning Engineer at Quirin Privatbank in Berlin.</span> I build AI agents that help customers understand their finances and internal tools that enhance advisors' workflows.
               </p>
-              <p className="text-slate-200 leading-relaxed text-base">
-                I hold a degree in Artificial Intelligence from Maastricht University (GPA 8.3/10). Focused, curious, and team-oriented.
+              <p className="text-[#8f837a] leading-relaxed text-base font-light">
+                <span className="font-medium">Maastricht University grad</span> (Data Science & AI, 8.3/10 GPA). Curious, passionate, eager to learn something new each day.
               </p>
             </div>
           </CardContent>
         </Card>
+        </section>
 
         {/* ================= EXPERIENCE ================= */}
-        <section className="mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
-          <h2 className="text-3xl font-bold mb-6 bg-gradient-to-b from-slate-100 to-slate-400 bg-clip-text text-transparent">
+        <section id="experience" className="mb-24 reveal">
+          <h2 className="text-4xl font-normal mb-14 text-[#5e5e5e] flex items-center gap-3 tracking-wide">
+            <Zap className="w-7 h-7 text-[#b9b99d]" />
             Experience
           </h2>
 
-          <div className="space-y-6">
+          <div className="space-y-8 relative">
+            {/* Timeline line - natural sage gradient */}
+            <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-[#b9b99d] via-[#dcb482] to-transparent opacity-40 hidden md:block" />
+
             {/* Current Position - Quirin Privatbank */}
-            <Card className="bg-white/8 backdrop-blur-md border-slate-600/60 transition-all duration-300 hover:bg-white/12 hover:shadow-2xl hover:border-slate-500/70 hover:-translate-y-1">
-              <CardContent className="p-7">
+            <motion.div
+              initial={{ opacity: 0, x: -15 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+              viewport={{ once: true }}
+            >
+            <Card className="glass-card shadow-natural card-lift border-[#b9b99d]/30 relative overflow-hidden bg-[#dfcaba]/40">
+              <CardContent className="px-10 py-10">
                 <div className="flex items-start gap-5 mb-4">
                   {/* Company Logo - Round Glassy Button */}
-                  <div className="relative w-16 h-16 flex-shrink-0 rounded-full overflow-hidden bg-white p-3 shadow-xl border border-slate-500/40">
-                    <Image
-                      src="/company-logo-1.jpg"
-                      alt="Quirin Privatbank logo"
-                      fill
-                      className="object-contain"
-                    />
+                  <div className="relative w-16 h-16 flex-shrink-0 rounded-full overflow-hidden bg-white shadow-natural border border-[#8f837a]/20 flex items-center justify-center p-3">
+                    <div className="relative w-full h-full">
+                      <Image
+                        src="/quirinprivatbank-logo.svg"
+                        alt="Quirin Privatbank logo"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
                   </div>
                   <div className="flex-1">
                     <div className="flex items-start justify-between gap-2 mb-2">
                       <div>
-                        <h3 className="text-xl font-semibold text-white">Machine Learning Engineer</h3>
-                        <p className="text-slate-200">Quirin Privatbank</p>
+                        <h3 className="text-xl font-medium text-[#5e5e5e]">Machine Learning Engineer</h3>
+                        <p className="text-[#8f837a] font-light">Quirin Privatbank · Full Time</p>
                       </div>
-                      <Badge variant="default" className="shrink-0 bg-green-600 hover:bg-green-700">Current</Badge>
+                      <Badge variant="default" className="shrink-0 bg-[#b9b99d] hover:bg-[#a8a88a] text-[#5e5e5e] font-normal">Current</Badge>
                     </div>
-                    <div className="flex flex-wrap items-center gap-3 text-sm text-slate-400">
+                    <div className="flex flex-wrap items-center gap-3 text-sm text-[#8f837a] font-light">
                       <div className="flex items-center gap-1">
                         <MapPin className="w-3 h-3" />
                         <span>Berlin</span>
@@ -185,37 +253,37 @@ export default function Portfolio() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="mb-4">
-                  <p className="text-sm font-semibold text-white mb-3">Projects: quirion.ai · Internal AI Platform</p>
-                  <ul className="space-y-2.5 text-slate-200 text-sm">
+                  <p className="text-sm font-medium text-[#606c5a] mb-3">Projects: quirion.ai · Internal AI Platform</p>
+                  <ul className="space-y-2.5 text-[#5e5e5e] text-sm font-light">
                     <li className="flex gap-3 leading-relaxed">
-                      <span className="text-blue-400 font-bold flex-shrink-0">•</span>
-                      <span>Feature Development for quirion.ai - optimizing financial tools for our chatbot, backend optimization and frontend updates.</span>
+                      <span className="text-[#b9b99d] font-normal flex-shrink-0">•</span>
+                      <span>Feature development for quirion.ai, focusing on optimizing tools, prompts, and agent behavior.</span>
                     </li>
                     <li className="flex gap-3 leading-relaxed">
-                      <span className="text-blue-400 font-bold flex-shrink-0">•</span>
-                      <span>Development of Internal AI Platform for Financial Advisors - improving workflows enabling better customer advice.</span>
+                      <span className="text-[#b9b99d] font-normal flex-shrink-0">•</span>
+                      <span>Observability platform for quirion.ai using Langfuse and Grafana to analyze chatbot behavior and better understand customer needs.</span>
                     </li>
                     <li className="flex gap-3 leading-relaxed">
-                      <span className="text-blue-400 font-bold flex-shrink-0">•</span>
-                      <span>Setup of extensive monitoring through Langfuse and Grafana, gathering actionable insight into performance and behavior of our agent.</span>
+                      <span className="text-[#b9b99d] font-normal flex-shrink-0">•</span>
+                      <span>Development of an internal platform leveraging AI to enhance financial advisor workflows.</span>
                     </li>
                   </ul>
                 </div>
 
                 {/* Links */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <Button variant="outline" size="sm" asChild className="hover:bg-slate-700/50 border-slate-500/50">
-                    <a href="https://www.quirion.ai" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <Button variant="outline" size="sm" asChild className="glass-card natural-border text-[#5e5e5e] hover:bg-[#b9b99d]/20 hover:text-[#606c5a] transition-all font-light">
+                    <a href="https://quirion.ai/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                       <Zap className="w-3 h-3" />
-                      Chatbot
+                      quirion.Ai
                     </a>
                   </Button>
-                  <Button variant="outline" size="sm" asChild className="hover:bg-slate-700/50 border-slate-500/50">
+                  <Button variant="outline" size="sm" asChild className="glass-card natural-border text-[#5e5e5e] hover:bg-[#b9b99d]/20 hover:text-[#606c5a] transition-all font-light">
                     <a href="https://www.quirinprivatbank.de" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                       <Globe className="w-3 h-3" />
-                      Website
+                      Quirin Privatbank
                     </a>
                   </Button>
                 </div>
@@ -223,111 +291,137 @@ export default function Portfolio() {
                 {/* Tech Stack */}
                 <div className="space-y-3">
                   <div>
-                    <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">Frontend</p>
+                    <p className="text-xs font-medium text-[#8f837a] uppercase tracking-wide mb-2">Frontend</p>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">TypeScript</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Next.js</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">React</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">AI-SDK</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">TypeScript</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Next.js</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">React</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">AI-SDK</Badge>
                     </div>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">Backend</p>
+                    <p className="text-xs font-medium text-[#8f837a] uppercase tracking-wide mb-2">Backend</p>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Python</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">FastAPI</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Langgraph</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Langfuse</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Postgres</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Python</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">FastAPI</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Langgraph</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Langfuse</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Postgres</Badge>
                     </div>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-2">Infrastructure</p>
+                    <p className="text-xs font-medium text-[#8f837a] uppercase tracking-wide mb-2">Infrastructure</p>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Azure</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Docker</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Kubernetes</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Terraform</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Azure</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Docker</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Kubernetes</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Terraform</Badge>
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
+            </motion.div>
 
             {/* Internship - Rabobank */}
-            <Card className="bg-white/8 backdrop-blur-md border-slate-600/60 transition-all duration-300 hover:bg-white/12 hover:shadow-2xl hover:border-slate-500/70 hover:-translate-y-1">
-              <CardContent className="p-7">
+            <motion.div
+              initial={{ opacity: 0, x: -15 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.23, 1, 0.32, 1] }}
+              viewport={{ once: true }}
+            >
+            <Card className="glass-card shadow-natural card-lift border-[#dcb482]/30 relative overflow-hidden bg-[#e6e4e0]/60">
+              <CardContent className="px-10 py-10">
                 <div className="flex items-start gap-5 mb-4">
                   {/* Company Logo - Round Glassy Button */}
-                  <div className="relative w-16 h-16 flex-shrink-0 rounded-full overflow-hidden bg-white p-3 shadow-xl border border-slate-500/40">
-                    <Image
-                      src="/company-logo-2.jpg"
-                      alt="Rabobank logo"
-                      fill
-                      className="object-contain"
-                    />
+                  <div className="relative w-16 h-16 flex-shrink-0 rounded-full overflow-hidden bg-white shadow-natural border border-[#8f837a]/20 flex items-center justify-center p-3">
+                    <div className="relative w-full h-full">
+                      <Image
+                        src="/rabobank-logo.svg"
+                        alt="Rabobank logo"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
                   </div>
                   <div className="flex-1">
-                    <div className="mb-2">
-                      <h3 className="text-xl font-semibold text-white">Data Science Intern</h3>
-                      <p className="text-slate-200">Rabobank</p>
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <div>
+                        <h3 className="text-xl font-medium text-[#5e5e5e]">Data Scientist</h3>
+                        <p className="text-[#8f837a] font-light">Rabobank • Internship</p>
+                      </div>
                     </div>
-                    <div className="flex flex-wrap items-center gap-3 text-sm text-slate-400">
+                    <div className="flex flex-wrap items-center gap-3 text-sm text-[#8f837a] font-light">
                       <div className="flex items-center gap-1">
                         <MapPin className="w-3 h-3" />
                         <span>Remote (Netherlands)</span>
                       </div>
                       <div className="flex items-center gap-1">
                         <Calendar className="w-3 h-3" />
-                        <span>2024 - 2025</span>
+                        <span>2023 - 2024</span>
                       </div>
                     </div>
                   </div>
                 </div>
-                
-                <p className="text-slate-200 text-sm mb-4 leading-relaxed">
-                  Research and development on quantum-based portfolio optimization methods.
-                </p>
+
+                <div className="mb-4">
+                  <ul className="space-y-2.5 text-[#5e5e5e] text-sm font-light">
+                    <li className="flex gap-3 leading-relaxed">
+                      <span className="text-[#dcb482] font-normal flex-shrink-0">•</span>
+                      <span>Implemented newest solver of D-Wave allowing to solve large problems in shorter runtimes.</span>
+                    </li>
+                  </ul>
+                </div>
 
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Python</Badge>
-                  <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Matlab</Badge>
-                  <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">D-Wave</Badge>
+                  <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Python</Badge>
+                  <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Matlab</Badge>
+                  <Badge variant="outline" className="tech-badge text-[#5e5e5e]">D-Wave</Badge>
                 </div>
               </CardContent>
             </Card>
+            </motion.div>
           </div>
         </section>
 
         {/* ================= EDUCATION ================= */}
-        <section className="mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">
-          <h2 className="text-3xl font-bold mb-6 bg-gradient-to-b from-slate-100 to-slate-400 bg-clip-text text-transparent">
+        <section id="education" className="mb-24 reveal">
+          <h2 className="text-4xl font-normal mb-14 text-[#5e5e5e] flex items-center gap-3 tracking-wide">
+            <BookOpen className="w-7 h-7 text-[#dcb482]" />
             Education
           </h2>
 
-          <div className="space-y-6">
+          <div className="space-y-8">
             {/* Maastricht University */}
-            <Card className="bg-white/8 backdrop-blur-md border-slate-600/60 transition-all duration-300 hover:bg-white/12 hover:shadow-2xl hover:border-slate-500/70 hover:-translate-y-1">
-              <CardContent className="p-7">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+              viewport={{ once: true }}
+            >
+            <Card className="glass-card shadow-natural card-lift border-[#b9b99d]/30 bg-[#dfcaba]/30">
+              <CardContent className="px-10 py-10">
                 <div className="flex items-start gap-5 mb-4">
                   {/* University Logo - Round Glassy Button */}
-                  <div className="relative w-16 h-16 flex-shrink-0 rounded-full overflow-hidden bg-white p-3 shadow-xl border border-slate-500/40">
-                    <Image
-                      src="/university-logo-1.jpg"
-                      alt="Maastricht University logo"
-                      fill
-                      className="object-contain"
-                    />
+                  <div className="relative w-16 h-16 flex-shrink-0 rounded-full overflow-hidden bg-white shadow-natural border border-[#8f837a]/20 flex items-center justify-center p-3">
+                    <div className="relative w-full h-full">
+                      <Image
+                        src="/university-logo-1.jpg"
+                        alt="Maastricht University logo"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
                   </div>
                   <div className="flex-1">
                     <div className="flex items-start justify-between gap-2 mb-2">
                       <div>
-                        <h3 className="text-xl font-semibold text-white">Data Science and Artificial Intelligence</h3>
-                        <p className="text-slate-200">Maastricht University</p>
+                        <h3 className="text-xl font-medium text-[#5e5e5e]">Data Science and Artificial Intelligence</h3>
+                        <p className="text-[#8f837a] font-light">Maastricht University</p>
                       </div>
-                      <Badge variant="secondary" className="shrink-0">GPA: 8.3/10</Badge>
+                      <Badge variant="secondary" className="shrink-0 bg-[#dcb482] text-[#5e5e5e] hover:bg-[#d4a571] font-normal">GPA: 8.3/10</Badge>
                     </div>
-                    <div className="flex flex-wrap items-center gap-3 text-sm text-slate-400">
+                    <div className="flex flex-wrap items-center gap-3 text-sm text-[#8f837a] font-light">
                       <div className="flex items-center gap-1">
                         <MapPin className="w-3 h-3" />
                         <span>Maastricht</span>
@@ -340,41 +434,59 @@ export default function Portfolio() {
                   </div>
                 </div>
 
-                <p className="text-slate-200 text-sm mb-3 leading-relaxed">
-                  Rewarded as best AI program in 2023. Strong focus on AI fundamentals with bi-yearly team 
-                  projects building real-world applications.
+                <p className="text-[#5e5e5e] text-sm mb-3 leading-relaxed font-light">
+                  Recognized as the top AI program in the Netherlands in 2023. Through collaborative, hands-on projects, I've developed a solid foundation in AI and machine learning.
                 </p>
-                
-                <p className="text-sm text-slate-400 mb-3">
-                  <span className="text-slate-200 font-semibold">Thesis:</span> Conditional Diffusion Models for ECG Signal Denoising (Grade: 8.5/10)
+
+                <p className="text-sm text-[#8f837a] mb-4 font-light">
+                  <span className="text-[#5e5e5e] font-medium">Thesis:</span> <a href="https://github.com/piedeboer96/ECG-Signal-Denoising" target="_blank" rel="noopener noreferrer" className="text-[#606c5a] hover:text-[#b9b99d] underline">Conditional Diffusion Models for ECG Signal Denoising</a> (Grade: 8.5/10)
                 </p>
 
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Machine Learning</Badge>
-                  <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Deep Learning</Badge>
-                  <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Computer Vision</Badge>
-                  <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">NLP</Badge>
+                  <Button variant="outline" size="sm" asChild className="glass-card natural-border text-[#5e5e5e] hover:bg-[#b9b99d]/20 hover:text-[#606c5a] transition-all font-light">
+                    <a href="https://github.com/piedeboer96/ECG-Signal-Denoising" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                      <Github className="w-3 h-3" />
+                      Thesis Repository
+                    </a>
+                  </Button>
+                  <Button variant="outline" size="sm" asChild className="glass-card natural-border text-[#5e5e5e] hover:bg-[#b9b99d]/20 hover:text-[#606c5a] transition-all font-light">
+                    <a href="https://www.maastrichtuniversity.nl/education/bachelor/programmes/data-science-and-artificial-intelligence" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                      <Globe className="w-3 h-3" />
+                      Program Website
+                    </a>
+                  </Button>
                 </div>
               </CardContent>
             </Card>
+            </motion.div>
 
             {/* Utrecht University */}
-            <Card className="bg-white/8 backdrop-blur-md border-slate-600/60 transition-all duration-300 hover:bg-white/12 hover:shadow-2xl hover:border-slate-500/70 hover:-translate-y-1">
-              <CardContent className="p-7">
-                <div className="flex items-start gap-5">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.23, 1, 0.32, 1] }}
+              viewport={{ once: true }}
+            >
+            <Card className="glass-card shadow-natural card-lift border-[#c09e85]/30 bg-[#e6e4e0]/50">
+              <CardContent className="px-10 py-10">
+                <div className="flex items-start gap-5 mb-4">
                   {/* University Logo - Round Glassy Button */}
-                  <div className="relative w-16 h-16 flex-shrink-0 rounded-full overflow-hidden bg-white p-3 shadow-xl border border-slate-500/40">
-                    <Image
-                      src="/university-logo-2.jpg"
-                      alt="Utrecht University logo"
-                      fill
-                      className="object-contain"
-                    />
+                  <div className="relative w-16 h-16 flex-shrink-0 rounded-full overflow-hidden bg-white shadow-natural border border-[#8f837a]/20 flex items-center justify-center p-3">
+                    <div className="relative w-full h-full">
+                      <Image
+                        src="/utrechtuniversity-logo.svg"
+                        alt="Utrecht University logo"
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-white">Chemistry</h3>
-                    <p className="text-slate-200 mb-2">Utrecht University</p>
-                    <div className="flex flex-wrap items-center gap-3 text-sm text-slate-400">
+                    <div className="mb-2">
+                      <h3 className="text-xl font-medium text-[#5e5e5e]">Chemistry</h3>
+                      <p className="text-[#8f837a] font-light">Utrecht University</p>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-3 text-sm text-[#8f837a] font-light">
                       <div className="flex items-center gap-1">
                         <MapPin className="w-3 h-3" />
                         <span>Utrecht</span>
@@ -386,72 +498,129 @@ export default function Portfolio() {
                     </div>
                   </div>
                 </div>
+
+                <p className="text-[#5e5e5e] text-sm mb-3 leading-relaxed font-light">
+                  Completed first year 60 ECTS.
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Calculus</Badge>
+                  <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Linear Algebra</Badge>
+                  <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Physics</Badge>
+                </div>
               </CardContent>
             </Card>
+            </motion.div>
           </div>
         </section>
 
         {/* ================= SKILLS ================= */}
-        <section className="mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-700">
-          <h2 className="text-3xl font-bold mb-6 bg-gradient-to-b from-slate-100 to-slate-400 bg-clip-text text-transparent">
+        <section id="skills" className="mb-24 reveal">
+          <h2 className="text-4xl font-normal mb-14 text-[#5e5e5e] flex items-center gap-3 tracking-wide">
+            <Sparkles className="w-7 h-7 text-[#c09e85]" />
             Skills & Languages
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-8">
             {/* Technical Skills */}
-            <Card className="bg-white/8 backdrop-blur-md border-slate-600/60 transition-all duration-300 hover:bg-white/12 hover:shadow-2xl hover:border-slate-500/70">
-              <CardContent className="p-7">
-                <h3 className="text-lg font-semibold text-white mb-4">Technical Skills</h3>
+            <motion.div
+              initial={{ opacity: 0, x: -15 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+              viewport={{ once: true }}
+            >
+            <Card className="glass-card shadow-natural card-lift border-[#b9b99d]/30 h-full bg-[#e6e4e0]/50">
+              <CardContent className="px-10 py-10">
+                <h3 className="text-xl font-medium text-[#5e5e5e] mb-6">Technical Skills</h3>
                 <div className="space-y-4">
                   <div>
-                    <p className="text-sm font-semibold text-slate-400 mb-2">Languages & Frameworks</p>
+                    <p className="text-sm font-medium text-[#8f837a] mb-2">Languages & Frameworks</p>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Python</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">TypeScript</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Next.js</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">React</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">FastAPI</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Docker</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Kubernetes</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Postgres</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Terraform</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Python</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">TypeScript</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Java</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Matlab</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Next.js</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">React</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">FastAPI</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Postgres</Badge>
                     </div>
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-slate-400 mb-2">Tools & Platforms</p>
+                    <p className="text-sm font-medium text-[#8f837a] mb-2">AI & Machine Learning</p>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Azure</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Git</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Jira</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Confluence</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">D-Wave</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Langgraph</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Langfuse</Badge>
-                      <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">AI-SDK</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Langgraph</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Langfuse</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">AI-SDK</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">RAG</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Prompt Engineering</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">NLP</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Optimization</Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-[#8f837a] mb-2">Data & Analytics</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Data Analysis</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Statistics</Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-[#8f837a] mb-2">Infrastructure & Deployment</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Docker</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Kubernetes</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Terraform</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Azure</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Git</Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-[#8f837a] mb-2">Design</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Figma</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Webflow</Badge>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-[#8f837a] mb-2">Project Management</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Jira</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Confluence</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Teams</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">PowerPoint</Badge>
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
+            </motion.div>
 
             {/* Languages */}
-            <Card className="bg-white/8 backdrop-blur-md border-slate-600/60 transition-all duration-300 hover:bg-white/12 hover:shadow-2xl hover:border-slate-500/70">
-              <CardContent className="p-7">
-                <h3 className="text-lg font-semibold text-white mb-4">Languages</h3>
+            <motion.div
+              initial={{ opacity: 0, x: 15 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.23, 1, 0.32, 1] }}
+              viewport={{ once: true }}
+            >
+            <Card className="glass-card shadow-natural card-lift border-[#dcb482]/30 h-full bg-[#dfcaba]/30">
+              <CardContent className="px-10 py-10">
+                <h3 className="text-xl font-medium text-[#5e5e5e] mb-6">Languages</h3>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">Dutch (Native)</Badge>
-                  <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">English (Fluent)</Badge>
-                  <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">German (B2)</Badge>
-                  <Badge variant="outline" className="border-slate-500/50 text-slate-200 hover:bg-slate-700/50 transition-all">French (A2)</Badge>
+                  <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Dutch (Native)</Badge>
+                  <Badge variant="outline" className="tech-badge text-[#5e5e5e]">English (Fluent)</Badge>
+                  <Badge variant="outline" className="tech-badge text-[#5e5e5e]">German (Fluent)</Badge>
+                  <Badge variant="outline" className="tech-badge text-[#5e5e5e]">French (Beginner)</Badge>
                 </div>
               </CardContent>
             </Card>
+            </motion.div>
           </div>
         </section>
 
         {/* ================= FOOTER ================= */}
-        <footer className="text-center pt-8 pb-4">
-          <p className="text-slate-500 text-sm">
+        <footer className="text-center pt-12 pb-6">
+          <p className="text-[#8f837a] text-sm font-light">
             © {new Date().getFullYear()} Pie de Boer. All rights reserved.
           </p>
         </footer>
