@@ -42,7 +42,7 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#f3f0e8]">
+    <div className="relative min-h-screen overflow-hidden bg-[#1a1b26]">
       {/* Subtle Organic Gradient Background */}
       <div className="fixed inset-0 mesh-gradient opacity-100" />
 
@@ -63,8 +63,8 @@ export default function Portfolio() {
             >
               <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden shadow-natural zen-circle will-change-transform group">
                 {/* Subtle sage glow on hover */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#b9b99d] to-[#dcb482] opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-700" />
-                <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-[#e6e4e0]">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#8b7ec8] to-[#9e91d4] opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-700" />
+                <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-[#3a3d4a]">
                   <Image
                     src="/profile.jpg"
                     alt="Pie de Boer"
@@ -91,8 +91,8 @@ export default function Portfolio() {
               </h1>
 
               {/* Catchy Tagline */}
-              <p className="text-2xl md:text-3xl font-light text-[#606c5a] mb-12 leading-relaxed">
-                Currently exploring <span className="text-[#b9b99d] font-medium">Next.js</span> and <span className="text-[#b9b99d] font-medium">AI SDK</span> to build modern, AI-powered web applications
+              <p className="text-2xl md:text-3xl font-light text-[#a89bb5] mb-12 leading-relaxed">
+                I help people plan their financial future—powered by <span className="text-[#a78bfa] font-medium">AI</span>
               </p>
 
               {/* CTA Button */}
@@ -110,21 +110,21 @@ export default function Portfolio() {
               </div>
 
               {/* Location */}
-              <div className="flex items-center justify-center md:justify-start gap-2 text-[#8f837a] mb-6">
+              <div className="flex items-center justify-center md:justify-start gap-2 text-[#b8b0a0] mb-6">
                 <MapPin className="w-4 h-4" />
                 <span className="font-light">Berlin, Germany</span>
               </div>
 
               {/* Contact Links */}
-              <div className="flex flex-wrap justify-center md:justify-start gap-3">
+              <div className="flex flex-wrap justify-center md:justify-start gap-2">
                 <Button
                   variant="outline"
                   size="sm"
                   asChild
-                  className="glass-card natural-border text-[#5e5e5e] hover:bg-[#dfcaba]/40 hover:text-[#606c5a] transition-all duration-300 font-light"
+                  className="natural-border text-[#e8dcc4] hover:border-[#8b7ec8]/50 hover:bg-[#8b7ec8]/10 transition-all duration-300 font-light px-3 py-2"
                 >
                   <a href="tel:+491622342077" className="flex items-center gap-2">
-                    <Phone className="w-4 h-4" />
+                    <Phone className="w-3 h-3" />
                     Mobile
                   </a>
                 </Button>
@@ -132,7 +132,7 @@ export default function Portfolio() {
                   variant="outline"
                   size="sm"
                   asChild
-                  className="glass-card natural-border text-[#5e5e5e] hover:bg-[#dfcaba]/40 hover:text-[#606c5a] transition-all duration-300 font-light"
+                  className="natural-border text-[#e8dcc4] hover:border-[#8b7ec8]/50 hover:bg-[#8b7ec8]/10 transition-all duration-300 font-light px-3 py-2"
                 >
                   <a
                     href="https://www.linkedin.com/in/pie-de-boer-6b6663265/"
@@ -140,7 +140,7 @@ export default function Portfolio() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2"
                   >
-                    <Linkedin className="w-4 h-4" />
+                    <Linkedin className="w-3 h-3" />
                     LinkedIn
                   </a>
                 </Button>
@@ -148,7 +148,7 @@ export default function Portfolio() {
                   variant="outline"
                   size="sm"
                   asChild
-                  className="glass-card natural-border text-[#5e5e5e] hover:bg-[#dfcaba]/40 hover:text-[#606c5a] transition-all duration-300 font-light"
+                  className="natural-border text-[#e8dcc4] hover:border-[#8b7ec8]/50 hover:bg-[#8b7ec8]/10 transition-all duration-300 font-light px-3 py-2"
                 >
                   <a
                     href="https://github.com/piedeboer96"
@@ -156,7 +156,7 @@ export default function Portfolio() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2"
                   >
-                    <Github className="w-4 h-4" />
+                    <Github className="w-3 h-3" />
                     GitHub
                   </a>
                 </Button>
@@ -164,7 +164,7 @@ export default function Portfolio() {
                   variant="outline"
                   size="sm"
                   asChild
-                  className="glass-card natural-border text-[#5e5e5e] hover:bg-[#dfcaba]/40 hover:text-[#606c5a] transition-all duration-300 font-light"
+                  className="natural-border text-[#e8dcc4] hover:border-[#8b7ec8]/50 hover:bg-[#8b7ec8]/10 transition-all duration-300 font-light px-3 py-2"
                 >
                   <a
                     href="https://www.xing.com/profile/Pie_deBoer"
@@ -172,7 +172,7 @@ export default function Portfolio() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2"
                   >
-                    <Globe className="w-4 h-4" />
+                    <Globe className="w-3 h-3" />
                     XING
                   </a>
                 </Button>
@@ -182,35 +182,35 @@ export default function Portfolio() {
         </header>
 
         {/* ================= ABOUT ================= */}
-        <section id="about" className="mb-24 reveal">
-        <Card className="glass-card shadow-natural card-lift border-[#8f837a]/30 bg-[#e6e4e0]/60">
+        {/* <section id="about" className="mb-24 reveal">
+        <Card className="natural-border card-lift">
           <CardContent className="px-10 py-10">
             <div className="flex items-center gap-3 mb-6">
-              <User className="w-6 h-6 text-[#606c5a]" />
-              <h2 className="text-2xl font-light text-[#5e5e5e] tracking-wide">About Me</h2>
+              <User className="w-6 h-6 text-[#8b7ec8]" />
+              <h2 className="text-2xl font-light text-[#e8dcc4] tracking-wide">About Me</h2>
             </div>
             <div className="space-y-5">
-              <p className="text-[#5e5e5e] leading-relaxed text-lg font-light">
+              <p className="text-[#b8b0a0] leading-relaxed text-lg font-light">
                 <span className="font-medium">Machine Learning Engineer at Quirin Privatbank in Berlin.</span> I build AI agents that help customers understand their finances and internal tools that enhance advisors' workflows.
               </p>
-              <p className="text-[#8f837a] leading-relaxed text-base font-light">
+              <p className="text-[#b8b0a0] leading-relaxed text-base font-light">
                 <span className="font-medium">Maastricht University grad</span> (Data Science & AI, 8.3/10 GPA). Curious, passionate, eager to learn something new each day.
               </p>
             </div>
           </CardContent>
         </Card>
-        </section>
+        </section> */}
 
         {/* ================= EXPERIENCE ================= */}
         <section id="experience" className="mb-24 reveal">
-          <h2 className="text-4xl font-normal mb-14 text-[#5e5e5e] flex items-center gap-3 tracking-wide">
-            <Zap className="w-7 h-7 text-[#b9b99d]" />
+          <h2 className="text-4xl font-normal mb-14 text-white flex items-center gap-3 tracking-wide">
+            <Zap className="w-7 h-7 text-[#8b7ec8]" />
             Experience
           </h2>
 
           <div className="space-y-8 relative">
             {/* Timeline line - natural sage gradient */}
-            <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-[#b9b99d] via-[#dcb482] to-transparent opacity-40 hidden md:block" />
+            <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-[#8b7ec8] via-[#9e91d4] to-transparent opacity-40 hidden md:block" />
 
             {/* Current Position - Quirin Privatbank */}
             <motion.div
@@ -219,7 +219,7 @@ export default function Portfolio() {
               transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
               viewport={{ once: true }}
             >
-            <Card className="glass-card shadow-natural card-lift border-[#b9b99d]/30 relative overflow-hidden bg-[#dfcaba]/40">
+            <Card className="natural-border card-lift relative overflow-hidden">
               <CardContent className="px-10 py-10">
                 <div className="flex items-start gap-5 mb-4">
                   {/* Company Logo - Round Glassy Button */}
@@ -236,10 +236,10 @@ export default function Portfolio() {
                   <div className="flex-1">
                     <div className="flex items-start justify-between gap-2 mb-2">
                       <div>
-                        <h3 className="text-xl font-medium text-[#5e5e5e]">Machine Learning Engineer</h3>
-                        <p className="text-[#8f837a] font-light">Quirin Privatbank · Full Time</p>
+                        <h3 className="text-xl font-medium text-white">Machine Learning Engineer</h3>
+                        <p className="text-[#b8b0a0] font-light">Quirin Privatbank · Full Time</p>
                       </div>
-                      <Badge variant="default" className="shrink-0 bg-[#b9b99d] hover:bg-[#a8a88a] text-[#5e5e5e] font-normal">Current</Badge>
+                      <Badge variant="default" className="shrink-0 bg-[#8b7ec8] hover:bg-[#9e91d4] text-white font-normal">Current</Badge>
                     </div>
                     <div className="flex flex-wrap items-center gap-3 text-sm text-[#8f837a] font-light">
                       <div className="flex items-center gap-1">
@@ -255,7 +255,7 @@ export default function Portfolio() {
                 </div>
 
                 <div className="mb-4">
-                  <p className="text-sm font-medium text-[#606c5a] mb-3">Projects: quirion.ai · Internal AI Platform</p>
+                  <p className="text-sm font-medium text-[#e8dcc4] mb-3">Projects: quirion.ai · Internal AI Platform</p>
                   <ul className="space-y-2.5 text-[#5e5e5e] text-sm font-light">
                     <li className="flex gap-3 leading-relaxed">
                       <span className="text-[#b9b99d] font-normal flex-shrink-0">•</span>
@@ -291,31 +291,31 @@ export default function Portfolio() {
                 {/* Tech Stack */}
                 <div className="space-y-3">
                   <div>
-                    <p className="text-xs font-medium text-[#8f837a] uppercase tracking-wide mb-2">Frontend</p>
+                    <p className="text-xs font-medium text-[#b8b0a0] uppercase tracking-wide mb-2">Frontend</p>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">TypeScript</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Next.js</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">React</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">AI-SDK</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">TypeScript</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Next.js</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">React</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">AI-SDK</Badge>
                     </div>
                   </div>
                   <div>
-                    <p className="text-xs font-medium text-[#8f837a] uppercase tracking-wide mb-2">Backend</p>
+                    <p className="text-xs font-medium text-[#b8b0a0] uppercase tracking-wide mb-2">Backend</p>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Python</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">FastAPI</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Langgraph</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Langfuse</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Postgres</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Python</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">FastAPI</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Langgraph</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Langfuse</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Postgres</Badge>
                     </div>
                   </div>
                   <div>
-                    <p className="text-xs font-medium text-[#8f837a] uppercase tracking-wide mb-2">Infrastructure</p>
+                    <p className="text-xs font-medium text-[#b8b0a0] uppercase tracking-wide mb-2">Infrastructure</p>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Azure</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Docker</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Kubernetes</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Terraform</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Azure</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Docker</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Kubernetes</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Terraform</Badge>
                     </div>
                   </div>
                 </div>
@@ -330,7 +330,7 @@ export default function Portfolio() {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.23, 1, 0.32, 1] }}
               viewport={{ once: true }}
             >
-            <Card className="glass-card shadow-natural card-lift border-[#dcb482]/30 relative overflow-hidden bg-[#e6e4e0]/60">
+            <Card className="natural-border card-lift relative overflow-hidden">
               <CardContent className="px-10 py-10">
                 <div className="flex items-start gap-5 mb-4">
                   {/* Company Logo - Round Glassy Button */}
@@ -347,11 +347,11 @@ export default function Portfolio() {
                   <div className="flex-1">
                     <div className="flex items-start justify-between gap-2 mb-2">
                       <div>
-                        <h3 className="text-xl font-medium text-[#5e5e5e]">Data Scientist</h3>
-                        <p className="text-[#8f837a] font-light">Rabobank • Internship</p>
+                        <h3 className="text-xl font-medium text-white">Data Scientist</h3>
+                        <p className="text-[#b8b0a0] font-light">Rabobank • Internship</p>
                       </div>
                     </div>
-                    <div className="flex flex-wrap items-center gap-3 text-sm text-[#8f837a] font-light">
+                    <div className="flex flex-wrap items-center gap-3 text-sm text-[#b8b0a0] font-light\">
                       <div className="flex items-center gap-1">
                         <MapPin className="w-3 h-3" />
                         <span>Remote (Netherlands)</span>
@@ -365,9 +365,9 @@ export default function Portfolio() {
                 </div>
 
                 <div className="mb-4">
-                  <ul className="space-y-2.5 text-[#5e5e5e] text-sm font-light">
+                  <ul className="space-y-2.5 text-[#b8b0a0] text-sm font-light">
                     <li className="flex gap-3 leading-relaxed">
-                      <span className="text-[#dcb482] font-normal flex-shrink-0">•</span>
+                      <span className="text-[#8b7ec8] font-normal flex-shrink-0">•</span>
                       <span>Implemented newest solver of D-Wave allowing to solve large problems in shorter runtimes.</span>
                     </li>
                   </ul>
@@ -386,8 +386,8 @@ export default function Portfolio() {
 
         {/* ================= EDUCATION ================= */}
         <section id="education" className="mb-24 reveal">
-          <h2 className="text-4xl font-normal mb-14 text-[#5e5e5e] flex items-center gap-3 tracking-wide">
-            <BookOpen className="w-7 h-7 text-[#dcb482]" />
+          <h2 className="text-4xl font-normal mb-14 text-white flex items-center gap-3 tracking-wide">
+            <BookOpen className="w-7 h-7 text-[#8b7ec8]" />
             Education
           </h2>
 
@@ -399,7 +399,7 @@ export default function Portfolio() {
               transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
               viewport={{ once: true }}
             >
-            <Card className="glass-card shadow-natural card-lift border-[#b9b99d]/30 bg-[#dfcaba]/30">
+            <Card className="natural-border card-lift">
               <CardContent className="px-10 py-10">
                 <div className="flex items-start gap-5 mb-4">
                   {/* University Logo - Round Glassy Button */}
@@ -467,7 +467,7 @@ export default function Portfolio() {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.23, 1, 0.32, 1] }}
               viewport={{ once: true }}
             >
-            <Card className="glass-card shadow-natural card-lift border-[#c09e85]/30 bg-[#e6e4e0]/50">
+            <Card className="natural-border card-lift">
               <CardContent className="px-10 py-10">
                 <div className="flex items-start gap-5 mb-4">
                   {/* University Logo - Round Glassy Button */}
@@ -516,8 +516,8 @@ export default function Portfolio() {
 
         {/* ================= SKILLS ================= */}
         <section id="skills" className="mb-24 reveal">
-          <h2 className="text-4xl font-normal mb-14 text-[#5e5e5e] flex items-center gap-3 tracking-wide">
-            <Sparkles className="w-7 h-7 text-[#c09e85]" />
+          <h2 className="text-4xl font-normal mb-14 text-white flex items-center gap-3 tracking-wide">
+            <Sparkles className="w-7 h-7 text-[#8b7ec8]" />
             Skills & Languages
           </h2>
 
@@ -529,66 +529,66 @@ export default function Portfolio() {
               transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
               viewport={{ once: true }}
             >
-            <Card className="glass-card shadow-natural card-lift border-[#b9b99d]/30 h-full bg-[#e6e4e0]/50">
+            <Card className="natural-border card-lift h-full">
               <CardContent className="px-10 py-10">
-                <h3 className="text-xl font-medium text-[#5e5e5e] mb-6">Technical Skills</h3>
+                <h3 className="text-xl font-medium text-white mb-6">Technical Skills</h3>
                 <div className="space-y-4">
                   <div>
-                    <p className="text-sm font-medium text-[#8f837a] mb-2">Languages & Frameworks</p>
+                    <p className="text-sm font-medium text-[#b8b0a0] mb-2">Languages & Frameworks</p>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Python</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">TypeScript</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Java</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Matlab</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Next.js</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">React</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">FastAPI</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Postgres</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Python</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">TypeScript</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Java</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Matlab</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Next.js</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">React</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">FastAPI</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Postgres</Badge>
                     </div>
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-[#8f837a] mb-2">AI & Machine Learning</p>
+                    <p className="text-sm font-medium text-[#b8b0a0] mb-2">AI & Machine Learning</p>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Langgraph</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Langfuse</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">AI-SDK</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">RAG</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Prompt Engineering</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">NLP</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Optimization</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Langgraph</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Langfuse</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">AI-SDK</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">RAG</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Prompt Engineering</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">NLP</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Optimization</Badge>
                     </div>
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-[#8f837a] mb-2">Data & Analytics</p>
+                    <p className="text-sm font-medium text-[#b8b0a0] mb-2">Data & Analytics</p>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Data Analysis</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Statistics</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Data Analysis</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Statistics</Badge>
                     </div>
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-[#8f837a] mb-2">Infrastructure & Deployment</p>
+                    <p className="text-sm font-medium text-[#b8b0a0] mb-2">Infrastructure & Deployment</p>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Docker</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Kubernetes</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Terraform</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Azure</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Git</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Docker</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Kubernetes</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Terraform</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Azure</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Git</Badge>
                     </div>
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-[#8f837a] mb-2">Design</p>
+                    <p className="text-sm font-medium text-[#b8b0a0] mb-2">Design</p>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Figma</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Webflow</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Figma</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Webflow</Badge>
                     </div>
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-[#8f837a] mb-2">Project Management</p>
+                    <p className="text-sm font-medium text-[#b8b0a0] mb-2">Project Management</p>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Jira</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Confluence</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Teams</Badge>
-                      <Badge variant="outline" className="tech-badge text-[#5e5e5e]">PowerPoint</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Jira</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Confluence</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">Teams</Badge>
+                      <Badge variant="outline" className="tech-badge text-[#e8dcc4]">PowerPoint</Badge>
                     </div>
                   </div>
                 </div>
@@ -603,14 +603,14 @@ export default function Portfolio() {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.23, 1, 0.32, 1] }}
               viewport={{ once: true }}
             >
-            <Card className="glass-card shadow-natural card-lift border-[#dcb482]/30 h-full bg-[#dfcaba]/30">
+            <Card className="natural-border card-lift h-full">
               <CardContent className="px-10 py-10">
-                <h3 className="text-xl font-medium text-[#5e5e5e] mb-6">Languages</h3>
+                <h3 className="text-xl font-medium text-white mb-6">Languages</h3>
                 <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline" className="tech-badge text-[#5e5e5e]">Dutch (Native)</Badge>
-                  <Badge variant="outline" className="tech-badge text-[#5e5e5e]">English (Fluent)</Badge>
-                  <Badge variant="outline" className="tech-badge text-[#5e5e5e]">German (Fluent)</Badge>
-                  <Badge variant="outline" className="tech-badge text-[#5e5e5e]">French (Beginner)</Badge>
+                  <Badge variant="outline" className="tech-badge text-[#e8dcc4]\">Dutch (Native)</Badge>
+                  <Badge variant="outline" className="tech-badge text-[#e8dcc4]">English (Fluent)</Badge>
+                  <Badge variant="outline" className="tech-badge text-[#e8dcc4]">German (Fluent)</Badge>
+                  <Badge variant="outline" className="tech-badge text-[#e8dcc4]">French (Beginner)</Badge>
                 </div>
               </CardContent>
             </Card>
@@ -620,7 +620,7 @@ export default function Portfolio() {
 
         {/* ================= FOOTER ================= */}
         <footer className="text-center pt-12 pb-6">
-          <p className="text-[#8f837a] text-sm font-light">
+          <p className="text-[#b8b0a0] text-sm font-light">
             © {new Date().getFullYear()} Pie de Boer. All rights reserved.
           </p>
         </footer>

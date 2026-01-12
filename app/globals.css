@@ -47,73 +47,75 @@
 }
 
 :root {
-  /* Japandi Design System - Wabi-Sabi Philosophy */
-  --radius: 0.5rem; /* Softer, more organic radius */
+  /* Claude-Inspired Minimalistic Dark Navy Palette */
+  --radius: 0.5rem;
 
-  /* Primary Neutrals - Light, Warm Base */
-  --soft-ivory: #f3f0e8;
-  --warm-gray: #e6e4e0;
-  --warm-sand: #dfcaba;
+  /* Primary Navy & Warm Accents */
+  --dark-bg: #1a1b26;
+  --dark-bg-secondary: #242836;
+  --primary-accent: #8b7ec8;
+  --accent-warm: #e8dcc4;
+  --accent-muted: #d4cfc3;
 
-  /* Accent Colors - Natural, Earthy */
-  --sage-green: #b9b99d;
-  --warm-gold: #dcb482;
-  --terracotta: #c09e85;
-
-  /* Deep Tones - Grounding Elements */
-  --warm-gray-brown: #8f837a;
-  --deep-sage: #606c5a;
-  --charcoal: #5e5e5e;
+  /* Neutral Tones - Warm Beige */
+  --text-primary: #e8dcc4;
+  --text-secondary: #b8b0a0;
+  --border-color: #3a3d4a;
 
   /* Design Token Mappings */
-  --background: #f3f0e8;
-  --foreground: #5e5e5e;
+  --background: #1a1b26;
+  --foreground: #e8dcc4;
 
-  --card: #e6e4e0;
-  --card-foreground: #5e5e5e;
-  --card-secondary: #dfcaba;
+  --card: #242836;
+  --card-foreground: #e8dcc4;
+  --card-secondary: #2f3240;
 
-  --popover: #e6e4e0;
-  --popover-foreground: #5e5e5e;
+  --popover: #242836;
+  --popover-foreground: #e8dcc4;
 
-  --primary: #b9b99d;
-  --primary-foreground: #5e5e5e;
-  --primary-hover: #a8a88a;
+  --primary: #8b7ec8;
+  --primary-foreground: #1a1b26;
+  --primary-hover: #9e91d4;
 
-  --secondary: #dcb482;
-  --secondary-foreground: #5e5e5e;
-  --secondary-hover: #d4a571;
+  --secondary: #3a3d4a;
+  --secondary-foreground: #e8dcc4;
+  --secondary-hover: #4a4d5a;
 
-  --muted: #e6e4e0;
-  --muted-foreground: #8f837a;
+  --muted: #2f3240;
+  --muted-foreground: #b8b0a0;
 
-  --accent: #c09e85;
-  --accent-foreground: #5e5e5e;
+  --accent: #e8dcc4;
+  --accent-foreground: #1a1b26;
 
-  --destructive: #c09e85;
-  --border: #8f837a;
-  --input: #e6e4e0;
-  --ring: #b9b99d;
+  --destructive: #e8dcc4;
+  --border: #3a3d4a;
+  --input: #242836;
+  --ring: #8b7ec8;
 
   /* Text Colors */
-  --heading-primary: #5e5e5e;
-  --heading-secondary: #606c5a;
-  --body-text: #8f837a;
-  --link-color: #606c5a;
-  --link-hover: #b9b99d;
+  --heading-primary: #e8dcc4;
+  --heading-secondary: #8b7ec8;
+  --body-text: #b8b0a0;
+  --link-color: #8b7ec8;
+  --link-hover: #9e91d4;
 
-  /* Sidebar (if needed) */
-  --sidebar: #e6e4e0;
-  --sidebar-foreground: #5e5e5e;
-  --sidebar-primary: #b9b99d;
-  --sidebar-primary-foreground: #5e5e5e;
-  --sidebar-accent: #dfcaba;
-  --sidebar-accent-foreground: #5e5e5e;
-  --sidebar-border: #8f837a;
-  --sidebar-ring: #b9b99d;
+  /* Sidebar */
+  --sidebar: #242836;
+  --sidebar-foreground: #e8dcc4;
+  --sidebar-primary: #8b7ec8;
+  --sidebar-primary-foreground: #1a1b26;
+  --sidebar-accent: #e8dcc4;
+  --sidebar-accent-foreground: #1a1b26;
+  --sidebar-border: #3a3d4a;
+  --sidebar-ring: #8b7ec8;
 }
 
-/* Japandi uses a single light mode - no dark mode needed */
+/* Dark mode is the default */
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+  }
+}
 
 @layer base {
   * {
@@ -161,13 +163,14 @@
   /* Subtle natural border accent */
   .natural-border {
     position: relative;
-    border: 1px solid var(--warm-gray-brown);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
+    background: transparent;
   }
 
   .natural-border:hover {
-    border-color: var(--sage-green);
-    box-shadow: 0 0 0 1px var(--sage-green);
+    border-color: rgba(139, 126, 200, 0.3);
+    background: rgba(139, 126, 200, 0.05);
   }
 
   /* Gentle card lift - minimalist movement */
@@ -176,10 +179,8 @@
   }
 
   .card-lift:hover {
-    transform: translateY(-4px);
-    box-shadow:
-      0 8px 24px rgba(143, 131, 122, 0.12),
-      0 2px 8px rgba(143, 131, 122, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(139, 126, 200, 0.1);
   }
 
   /* Soft tech badge - organic feel */
@@ -187,8 +188,8 @@
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
-    background: rgba(185, 185, 157, 0.08);
-    border-color: rgba(143, 131, 122, 0.3);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .tech-badge::before {
@@ -199,7 +200,7 @@
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(185, 185, 157, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(139, 126, 200, 0.1) 0%, transparent 70%);
     transform: translate(-50%, -50%);
     transition: width 0.4s ease, height 0.4s ease;
   }
@@ -210,18 +211,16 @@
   }
 
   .tech-badge:hover {
-    border-color: var(--sage-green);
-    background: rgba(185, 185, 157, 0.15);
-    color: var(--deep-sage);
-    box-shadow: 0 4px 12px rgba(185, 185, 157, 0.2);
+    border-color: rgba(139, 126, 200, 0.3);
+    background: rgba(139, 126, 200, 0.08);
   }
 
-  /* Soft glass card - light and airy */
+  /* Flat minimal glass card - no background tint */
   .glass-card {
-    background: rgba(230, 228, 224, 0.6);
-    backdrop-filter: blur(12px) saturate(100%);
-    -webkit-backdrop-filter: blur(12px) saturate(100%);
-    border: 1px solid rgba(143, 131, 122, 0.2);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   /* Subtle animated border */
