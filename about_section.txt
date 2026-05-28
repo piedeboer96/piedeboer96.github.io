@@ -1,3 +1,0 @@
-## About Me
-
-Machine Learning Engineer at Quirin Privatbank. I built agentic AI systems that help people understand finance and plan their financial wellbeing.
