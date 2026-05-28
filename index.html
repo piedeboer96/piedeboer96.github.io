@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pie de Boer — AI Engineer</title>
+  <meta name="description" content="AI Engineer at Quirin Privatbank. LangGraph, Azure, Next.js." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-family: 'IBM Plex Sans', sans-serif; background: #fff; color: #000; font-size: 15px; line-height: 1.5; }
+    a { color: inherit; text-decoration: none; }
+    .site { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 28px 0; border-bottom: 1px solid #000; }
+    .nav-name { font-size: 14px; font-weight: 500; letter-spacing: 0.02em; }
+    .nav-links { display: flex; gap: 32px; }
+    .nav-links a { font-size: 13px; color: #555; }
+    .nav-links a:hover { color: #000; }
+
+    .hero { padding: 80px 0 64px; border-bottom: 1px solid #000; }
+    .hero-label { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #555; margin-bottom: 20px; font-family: 'IBM Plex Mono', monospace; }
+    .hero-title { font-size: 52px; font-weight: 600; line-height: 1.05; letter-spacing: -0.02em; max-width: 640px; margin-bottom: 24px; }
+    .hero-sub { font-size: 15px; color: #555; max-width: 440px; line-height: 1.7; }
+    .hero-links { margin-top: 32px; display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn { display: inline-block; font-size: 13px; padding: 10px 20px; border: 1px solid #000; font-family: 'IBM Plex Sans', sans-serif; cursor: pointer; transition: background 0.15s, color 0.15s; }
+    .btn:hover { background: #000; color: #fff; }
+    .btn-ghost { border-color: #ccc; color: #555; }
+    .btn-ghost:hover { background: #000; color: #fff; border-color: #000; }
+
+    section { padding: 56px 0; border-bottom: 1px solid #000; }
+    .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-family: 'IBM Plex Mono', monospace; color: #888; margin-bottom: 40px; }
+
+    .job { display: grid; grid-template-columns: 200px 1fr; gap: 24px; margin-bottom: 40px; }
+    .job:last-child { margin-bottom: 0; }
+    .job-meta { font-size: 12px; color: #888; font-family: 'IBM Plex Mono', monospace; line-height: 1.8; }
+    .job-title { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .job-company { font-size: 14px; color: #555; margin-bottom: 12px; }
+    .job-desc { font-size: 14px; color: #555; line-height: 1.7; }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0; }
+    .skill-group { border: 1px solid #000; padding: 20px; margin: -1px 0 0 -1px; }
+    .skill-group-name { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-family: 'IBM Plex Mono', monospace; margin-bottom: 12px; color: #888; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { font-size: 12px; padding: 3px 8px; border: 1px solid #ccc; color: #555; }
+
+    .edu-row { display: grid; grid-template-columns: 200px 1fr; gap: 24px; }
+    .edu-meta { font-size: 12px; color: #888; font-family: 'IBM Plex Mono', monospace; line-height: 1.8; }
+    .edu-degree { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .edu-school { font-size: 14px; color: #555; margin-bottom: 8px; }
+    .edu-gpa { font-size: 13px; color: #888; font-family: 'IBM Plex Mono', monospace; }
+
+    .langs { display: flex; gap: 48px; }
+    .lang-item { display: flex; flex-direction: column; gap: 4px; }
+    .lang-name { font-size: 16px; font-weight: 600; }
+    .lang-level { font-size: 12px; color: #888; font-family: 'IBM Plex Mono', monospace; }
+
+    footer { padding: 32px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-copy { font-size: 12px; color: #888; font-family: 'IBM Plex Mono', monospace; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; color: #555; }
+    .footer-links a:hover { color: #000; }
+
+    @media (max-width: 600px) {
+      .hero-title { font-size: 36px; }
+      .job, .edu-row { grid-template-columns: 1fr; }
+      .job-meta, .edu-meta { color: #aaa; }
+      .langs { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <nav>
+      <span class="nav-name">Pie de Boer</span>
+      <div class="nav-links">
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <p class="hero-label">Berlin, Germany</p>
+      <h1 class="hero-title">AI Engineer. Full Stack.</h1>
+      <p class="hero-sub">Building agentic wealth-planning systems at Quirin Privatbank. LangGraph, Azure, Next.js — within GDPR and EU AI Act frameworks.</p>
+      <div class="hero-links">
+        <a href="mailto:piedeboer96@gmail.com" class="btn">Get in touch</a>
+        <a href="https://www.linkedin.com/in/pie-de-boer-6b6663265/" target="_blank" class="btn btn-ghost">LinkedIn ↗</a>
+        <a href="https://github.com/piedeboer96" target="_blank" class="btn btn-ghost">GitHub ↗</a>
+      </div>
+    </div>
+
+    <section id="experience">
+      <p class="section-label">Experience</p>
+
+      <div class="job">
+        <div class="job-meta">Feb 2025 — Present<br>Berlin, Germany</div>
+        <div>
+          <p class="job-title">AI Engineer</p>
+          <p class="job-company">Quirin Privatbank</p>
+          <p class="job-desc">Developing quirion.ai — a financial wealth-planning chatbot with LangGraph/LangChain, RAG, and the ThirdEyes simulation suite. Built pension and tax-saving calculators with Next.js. Wrote IaC (Terraform) and CI/CD pipelines (GitHub Actions) on Azure. Focused on LLM observability and EU AI Act compliance.</p>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="job-meta">Sep 2023 — Feb 2024<br>Remote, Netherlands</div>
+        <div>
+          <p class="job-title">Data Scientist (Intern)</p>
+          <p class="job-company">Rabobank</p>
+          <p class="job-desc">Quantum-based portfolio optimization on D-Wave quantum hardware. Stack: Python, MATLAB, D-Wave.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <p class="section-label">Skills</p>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <p class="skill-group-name">AI</p>
+          <div class="skill-tags">
+            <span class="tag">LangGraph</span>
+            <span class="tag">LangChain</span>
+            <span class="tag">RAG</span>
+            <span class="tag">Prompt Eng.</span>
+            <span class="tag">Evaluation</span>
+            <span class="tag">Langfuse</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-name">Languages</p>
+          <div class="skill-tags">
+            <span class="tag">Python</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Bash</span>
+            <span class="tag">Java</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-name">Cloud & Infra</p>
+          <div class="skill-tags">
+            <span class="tag">Azure</span>
+            <span class="tag">Terraform</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Kubernetes</span>
+            <span class="tag">Linux</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-name">Frontend</p>
+          <div class="skill-tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">React</span>
+            <span class="tag">AI SDK</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-name">Data</p>
+          <div class="skill-tags">
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">pgvector</span>
+            <span class="tag">ChromaDB</span>
+            <span class="tag">PyTorch</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <p class="skill-group-name">CI/CD & Obs.</p>
+          <div class="skill-tags">
+            <span class="tag">GitHub Actions</span>
+            <span class="tag">Grafana</span>
+            <span class="tag">Azure Monitor</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <p class="section-label">Education</p>
+      <div class="edu-row">
+        <div class="edu-meta">Sep 2021 — Jun 2024<br>Maastricht</div>
+        <div>
+          <p class="edu-degree">BSc Data Science & Artificial Intelligence</p>
+          <p class="edu-school">Maastricht University</p>
+          <p class="edu-gpa">GPA 8.3/10 — Thesis: Conditional Diffusion Models for ECG Denoising (8.5/10)</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-label">Languages</p>
+      <div class="langs">
+        <div class="lang-item"><span class="lang-name">Dutch</span><span class="lang-level">C2 Native</span></div>
+        <div class="lang-item"><span class="lang-name">English</span><span class="lang-level">C2</span></div>
+        <div class="lang-item"><span class="lang-name">German</span><span class="lang-level">C1</span></div>
+      </div>
+    </section>
+
+    <footer>
+      <span class="footer-copy">© 2026 Pie de Boer</span>
+      <div class="footer-links">
+        <a href="mailto:piedeboer96@gmail.com">piedeboer96@gmail.com</a>
+        <a href="tel:+491622342077">+49 162 234 2077</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
